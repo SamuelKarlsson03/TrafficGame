@@ -7,6 +7,10 @@ public class CarController : MonoBehaviour
     [Header ("Movement")]
     public float moveSpeed;
 
+    [Header("Explosion")]
+    public GameObject explosionPrefab;
+    public Transform explosionSpawn;
+
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -26,6 +30,7 @@ public class CarController : MonoBehaviour
         if(other.CompareTag("Wall") || other.CompareTag("Car"))
         {
             Destroy(gameObject);
+            Instantiate(explosionPrefab, explosionSpawn.position, explosionSpawn.rotation);
         }
     }
 }

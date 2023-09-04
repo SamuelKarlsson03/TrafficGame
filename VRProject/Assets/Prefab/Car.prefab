@@ -328,6 +328,7 @@ Transform:
   - {fileID: 2140301018336711272}
   - {fileID: 2140301017656713343}
   - {fileID: 2140301018902111163}
+  - {fileID: 8224636729522636901}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -344,6 +345,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  explosionPrefab: {fileID: 7513998704497667151, guid: ebe760ad4c556504fa9cb2d8188eb205,
+    type: 3}
+  explosionSpawn: {fileID: 8224636729522636901}
 --- !u!54 &2140301018632182676
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -418,3 +422,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1802197, y: 1.1768446, z: 2.2788506}
   m_Center: {x: -0.008304596, y: -0.08842248, z: 0.007953167}
+--- !u!1 &5939676086185369495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8224636729522636901}
+  m_Layer: 0
+  m_Name: ExplosionSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8224636729522636901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939676086185369495}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2140301018632182674}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

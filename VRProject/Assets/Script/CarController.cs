@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    [Header ("Movement")]
+    [Header("Movement")]
     public float moveSpeed;
 
     [Header("Explosion")]
@@ -27,10 +27,12 @@ public class CarController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Wall") || other.CompareTag("Car"))
+        if (other.CompareTag("Wall") || other.CompareTag("Car"))
         {
             Destroy(gameObject);
+
             Instantiate(explosionPrefab, explosionSpawn.position, explosionSpawn.rotation);
+            Destroy(explosionPrefab, 2);
         }
     }
 }

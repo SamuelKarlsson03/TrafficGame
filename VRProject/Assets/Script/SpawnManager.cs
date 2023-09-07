@@ -4,26 +4,42 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [Header("Spawner")]
-    public GameObject carPrefab;
-    public Transform spOne;
-    public Transform spTwo;
-    public Transform spThree;
-    public Transform spFour;
+    public GameObject[] carsToSpawn;
+    public Transform[] spawnPositions;
+
+    public float minSpawnInterval = 1f;
+    public float maxSpawnInterval = 6f;
+    private float Timer;
 
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(carPrefab, spOne.position, spOne.rotation);
-        Instantiate(carPrefab, spTwo.position, spTwo.rotation);
-        Instantiate(carPrefab, spThree.position, spThree.rotation);
-        Instantiate(carPrefab, spFour.position, spFour.rotation);
+        Timer = Random.Range(minSpawnInterval, maxSpawnInterval);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Timer -= Time.deltaTime;
+        if (Timer <= 0f)
+        {
+            SpawnCarsRandomly();
 
+            Timer = Random.Range(minSpawnInterval, maxSpawnInterval);
+        }
+
+        Debug.Log(Timer);
+
+    }
+
+    void SpawnCarsRandomly()
+    {
+        foreach (Transform spawnPoint in spawnPositions)
+        {
+            int randomIndex = Random.Range(0, carsToSpawn.Length);
+            GameObject objectToInstantiate = carsToSpawn[randomIndex];
+            Instantiate(objectToInstantiate, spawnPoint.position, spawnPoint.rotation);
+        }
     }
 
 }

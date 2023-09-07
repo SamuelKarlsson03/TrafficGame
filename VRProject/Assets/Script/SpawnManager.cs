@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     public Transform[] spawnPositions;
 
     public float minSpawnInterval = 1f;
-    public float maxSpawnInterval = 6f;
+    public float maxSpawnInterval = 10f;
     private float Timer;
 
     // Start is called before the first frame update

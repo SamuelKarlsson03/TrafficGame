@@ -11,6 +11,8 @@ public class CarController : MonoBehaviour
     public GameObject explosionPrefab;
     public Transform explosionSpawn;
 
+    GameManager gameManager;
+
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -32,7 +34,7 @@ public class CarController : MonoBehaviour
             Destroy(gameObject);
 
             Instantiate(explosionPrefab, explosionSpawn.position, explosionSpawn.rotation);
-            Destroy(explosionPrefab, 2);
+            //Destroy(explosionPrefab, 2f);
         }
     }
 }

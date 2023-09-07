@@ -22,15 +22,24 @@ public class Crosswalk : MonoBehaviour
 
     IEnumerator SpawnPedestrian()
     {
-        GameObject newPedestrianPrefab = PedestrianPrefabs[0];
+
+        bool randomBool = Random.Range(0, 2) == 1; //randomizes bool between true and false
+
+        GameObject newPedestrianPrefab = Instantiate(PedestrianPrefabs[0], transform.position, transform.rotation);
         PedestrianController pedestrianController = newPedestrianPrefab.GetComponent<PedestrianController>();
 
 
-        pedestrianController.DecidePedestrianMovement(true, true);
+        if (randomBool) //decides if pedestrians should move from left to right or right to left
+        {
+            newPedestrianPrefab.transform.position = posOne.transform.position;
+            pedestrianController.StartMovement(posOne.transform, posTwo.transform);
+        }
+        else
+        {
+            newPedestrianPrefab.transform.position = posTwo.transform.position;
+            pedestrianController.StartMovement(posTwo.transform, posOne.transform);
+        }
 
-        
-
-        Instantiate(newPedestrianPrefab);
         yield return null;
 
     }

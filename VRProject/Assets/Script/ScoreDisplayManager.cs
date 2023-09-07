@@ -28,6 +28,7 @@ public class ScoreDisplayManager : MonoBehaviour
 
     private void Update()
     {
+
         if (ScoreManager.Instance.currentScore != lastScore)
         {
             //displayText.text =
@@ -56,6 +57,7 @@ public class ScoreDisplayManager : MonoBehaviour
     private void UpdateScoreText(float score)
     {
         displayText.text = "SCORE : " + score.ToString("0000000000"); 
+        
     }
     
 

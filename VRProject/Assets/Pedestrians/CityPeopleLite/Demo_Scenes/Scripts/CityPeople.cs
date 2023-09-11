@@ -9,14 +9,25 @@ namespace CityPeople
         private AnimationClip[] myClips;
         private Animator animator;
 
+        [SerializeField] bool isCongoMove = false;
+
         void Start()
         {
             animator = GetComponent<Animator>();
             if (animator != null)
             {
+                if (isCongoMove)
+                {
+                    animator.Play("Exercise_warmingUp_170f");
+                }
+
+                if (!isCongoMove)
+                {
                 myClips = animator.runtimeAnimatorController.animationClips;
                 PlayAnyClip();
                 StartCoroutine(ShuffleClips());
+
+                }
             }
 
         }

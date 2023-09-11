@@ -5,9 +5,9 @@ using UnityEngine;
 public class PedestrianController : MonoBehaviour
 {
 
-    [SerializeField] float moveSpeed;
+    [SerializeField] float moveSpeed = 5;
 
-    [SerializeField] bool shouldMove = false;
+     bool shouldMoveByItself = false;
     [SerializeField] bool shouldCheckForPedestrians = true;
     [SerializeField] bool hasBeenHit = false;
 
@@ -26,7 +26,7 @@ public class PedestrianController : MonoBehaviour
     void Update()
     {
 
-        if (shouldMove)
+        if (shouldMoveByItself)
         {
             Move();
         }
@@ -44,14 +44,12 @@ public class PedestrianController : MonoBehaviour
         rigidBody.velocity = moveDirection * moveSpeed;
     }
 
-    public void StartMovement(Transform startPos, Transform endPos)
+    public void StartMovement(Transform endPos)
     {
 
         moveDirection = (endPos.position - transform.position).normalized;
 
-        shouldMove = true;
-
-
+        shouldMoveByItself = true;
     }
 
     public void CheckForOtherPedestrians()
@@ -85,7 +83,7 @@ public class PedestrianController : MonoBehaviour
     private void MoveToTheSide()
     {
         Debug.Log("Should move to the side");
-        transform.position += new Vector3(0, 0, moveToSideDist);
+        transform.localPosition += moveToSideDist * transform.right;
     }
 
     public void CheckIfDie()
@@ -97,9 +95,8 @@ public class PedestrianController : MonoBehaviour
 
     }
 
-    private void Die()
+    public void Die()
     {
-        Debug.Log("Man im dead PLACE OF DEATH : " + transform.position.z);
         Destroy(gameObject);
     }
 
@@ -107,7 +104,7 @@ public class PedestrianController : MonoBehaviour
     {
         hasBeenHit = true;
         rigidBody.constraints = RigidbodyConstraints.None;
-        shouldMove = false;
+        shouldMoveByItself = false;
         Debug.Log("Hit by Vehicle");
     }
 

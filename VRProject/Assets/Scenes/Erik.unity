@@ -275,6 +275,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &329791365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8225254747747863217, guid: 6f150f58facb4214ea7d3907199aa5e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 8936319162452203673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &342844546
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +573,48 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8936319161140833484, guid: 6f150f58facb4214ea7d3907199aa5e5,
+        type: 3}
+      propertyPath: posMiddle
+      value: 
+      objectReference: {fileID: 329791365}
+    - target: {fileID: 8936319161140833484, guid: 6f150f58facb4214ea7d3907199aa5e5,
+        type: 3}
+      propertyPath: maxTimeSpawn
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8936319161140833484, guid: 6f150f58facb4214ea7d3907199aa5e5,
+        type: 3}
+      propertyPath: minTimeSpawn
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8936319161140833484, guid: 6f150f58facb4214ea7d3907199aa5e5,
+        type: 3}
+      propertyPath: timeUntilSpawn
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8936319161140833484, guid: 6f150f58facb4214ea7d3907199aa5e5,
+        type: 3}
+      propertyPath: randomEventChance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8936319161140833484, guid: 6f150f58facb4214ea7d3907199aa5e5,
+        type: 3}
+      propertyPath: crosswalkEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8936319161140833484, guid: 6f150f58facb4214ea7d3907199aa5e5,
+        type: 3}
+      propertyPath: crosswalkEvents.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3cc14df688bfff940a2819ab154584f8,
+        type: 2}
+    - target: {fileID: 8936319161140833484, guid: 6f150f58facb4214ea7d3907199aa5e5,
+        type: 3}
+      propertyPath: PedestrianPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6584613354768528393, guid: bae26acf817c6dc4e82f95d9ef4ab46a,
+        type: 3}
     - target: {fileID: 8936319161140833485, guid: 6f150f58facb4214ea7d3907199aa5e5,
         type: 3}
       propertyPath: m_Name
@@ -595,22 +643,22 @@ PrefabInstance:
     - target: {fileID: 8936319161140833487, guid: 6f150f58facb4214ea7d3907199aa5e5,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.715379
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8936319161140833487, guid: 6f150f58facb4214ea7d3907199aa5e5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8936319161140833487, guid: 6f150f58facb4214ea7d3907199aa5e5,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.69873667
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8936319161140833487, guid: 6f150f58facb4214ea7d3907199aa5e5,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8936319161140833487, guid: 6f150f58facb4214ea7d3907199aa5e5,
         type: 3}
@@ -620,7 +668,7 @@ PrefabInstance:
     - target: {fileID: 8936319161140833487, guid: 6f150f58facb4214ea7d3907199aa5e5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 88.651
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8936319161140833487, guid: 6f150f58facb4214ea7d3907199aa5e5,
         type: 3}

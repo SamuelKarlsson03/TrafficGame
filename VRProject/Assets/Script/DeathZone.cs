@@ -8,7 +8,7 @@ public class DeathZone : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pedestrian"))
         {
-            other.gameObject.GetComponent<PedestrianController>().CheckIfDie();
+            other.gameObject.GetComponent<PedestrianController>().Die();
         }
     }
 

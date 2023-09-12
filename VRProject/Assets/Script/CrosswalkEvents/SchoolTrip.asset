@@ -20,4 +20,4 @@ MonoBehaviour:
   - {fileID: 5986958801767457440, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
   - {fileID: 5986958801767457440, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
   spawnOnSameSide: 1
-  timeBetweenSpawn: 0.2
+  timeBetweenSpawn: 0.5

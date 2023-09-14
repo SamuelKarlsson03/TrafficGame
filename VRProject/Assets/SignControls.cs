@@ -13,16 +13,18 @@ public class SignControls : MonoBehaviour
 
     void Update()
     {
-        if (Physics.BoxCast(transform.position, boxCastSize / 2, Vector3.right, out RaycastHit hit, Quaternion.identity, maxReach))
-        {
-            Debug.Log(hit.collider.name);
+        Vector3 direction = transform.TransformDirection(Vector3.right);
 
+        if (Physics.BoxCast(transform.position, boxCastSize / 2, direction, out RaycastHit hit, transform.rotation, maxReach))
+        {
             if (hit.collider.CompareTag("Car"))
+            {
                 Debug.Log("carhit");
+                //Do Stuff
+            }
         }
 
-
-
-        Draw.WireBox(transform.position + (Vector3.right*(maxReach / 2)), new Vector3(5f, boxCastSize.y, boxCastSize.z), Color.green);
+        //Debug
+        Draw.WireBox(transform.TransformPoint(Vector3.right * (maxReach / 2)), transform.rotation, new Vector3(5f, boxCastSize.y, boxCastSize.z), Color.green);
     }
 }

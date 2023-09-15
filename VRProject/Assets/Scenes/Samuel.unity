@@ -238,7 +238,7 @@ MonoBehaviour:
   turnSpeed: 110.92966
   speedWhileTurning: 0
   friction: 1.4449146
-  futureLookTime: 0
+  futureLookTime: 1.8774989
   frontPosition: {fileID: 1105585944}
   backPosition: {fileID: 1509905015}
   shouldStop: 0
@@ -387,7 +387,7 @@ MonoBehaviour:
   turnSpeed: 105.63577
   speedWhileTurning: 0
   friction: 1.5984538
-  futureLookTime: 0
+  futureLookTime: 1.8054588
   frontPosition: {fileID: 559857071}
   backPosition: {fileID: 540460034}
   shouldStop: 0
@@ -716,7 +716,7 @@ MonoBehaviour:
   turnSpeed: 109.58654
   speedWhileTurning: 0
   friction: 1.4951785
-  futureLookTime: 0
+  futureLookTime: 1.6459025
   frontPosition: {fileID: 531873509}
   backPosition: {fileID: 1646403068}
   shouldStop: 0
@@ -865,7 +865,7 @@ MonoBehaviour:
   turnSpeed: 127.998116
   speedWhileTurning: 0
   friction: 1.4906404
-  futureLookTime: 0
+  futureLookTime: 1.5569143
   frontPosition: {fileID: 1496008032}
   backPosition: {fileID: 1254618219}
   shouldStop: 0
@@ -1248,7 +1248,7 @@ MonoBehaviour:
   turnSpeed: 121.33162
   speedWhileTurning: 0
   friction: 1.4672723
-  futureLookTime: 0
+  futureLookTime: 1.6097072
   frontPosition: {fileID: 784677474}
   backPosition: {fileID: 1290004145}
   shouldStop: 0
@@ -1738,7 +1738,7 @@ MonoBehaviour:
   turnSpeed: 71.76828
   speedWhileTurning: 0
   friction: 1.4970676
-  futureLookTime: 0
+  futureLookTime: 1.9895866
   frontPosition: {fileID: 1680529389}
   backPosition: {fileID: 1291161368}
   shouldStop: 0
@@ -1887,7 +1887,7 @@ MonoBehaviour:
   turnSpeed: 73.86767
   speedWhileTurning: 0
   friction: 1.5944824
-  futureLookTime: 0
+  futureLookTime: 1.7032026
   frontPosition: {fileID: 2015527011}
   backPosition: {fileID: 2134096856}
   shouldStop: 0
@@ -2036,7 +2036,7 @@ MonoBehaviour:
   turnSpeed: 114.120926
   speedWhileTurning: 0
   friction: 1.5253531
-  futureLookTime: 0
+  futureLookTime: 1.502521
   frontPosition: {fileID: 1081488988}
   backPosition: {fileID: 1131709144}
   shouldStop: 0
@@ -2185,7 +2185,7 @@ MonoBehaviour:
   turnSpeed: 127.89771
   speedWhileTurning: 0
   friction: 1.4739562
-  futureLookTime: 0
+  futureLookTime: 1.7712672
   frontPosition: {fileID: 347980146}
   backPosition: {fileID: 827534557}
   shouldStop: 0
@@ -2506,7 +2506,7 @@ MonoBehaviour:
   turnSpeed: 111.460495
   speedWhileTurning: 0
   friction: 1.5709903
-  futureLookTime: 0
+  futureLookTime: 1.7890877
   frontPosition: {fileID: 747349473}
   backPosition: {fileID: 1398928362}
   shouldStop: 0
@@ -2717,7 +2717,7 @@ MonoBehaviour:
   turnSpeed: 122.99771
   speedWhileTurning: 0
   friction: 1.5631962
-  futureLookTime: 0
+  futureLookTime: 1.8819339
   frontPosition: {fileID: 1885940495}
   backPosition: {fileID: 228101888}
   shouldStop: 0
@@ -2866,7 +2866,7 @@ MonoBehaviour:
   turnSpeed: 116.12394
   speedWhileTurning: 0
   friction: 1.4256427
-  futureLookTime: 0
+  futureLookTime: 1.7836474
   frontPosition: {fileID: 1066114985}
   backPosition: {fileID: 708428196}
   shouldStop: 0
@@ -3046,7 +3046,7 @@ MonoBehaviour:
   turnSpeed: 85.70373
   speedWhileTurning: 0
   friction: 1.4147954
-  futureLookTime: 0
+  futureLookTime: 1.8912495
   frontPosition: {fileID: 2007027685}
   backPosition: {fileID: 1319599160}
   shouldStop: 0
@@ -3319,7 +3319,7 @@ MonoBehaviour:
   turnSpeed: 121.93143
   speedWhileTurning: 0
   friction: 1.4947399
-  futureLookTime: 0
+  futureLookTime: 1.8908759
   frontPosition: {fileID: 2002071458}
   backPosition: {fileID: 1800673375}
   shouldStop: 0
@@ -3383,37 +3383,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1243143575}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &336747033
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 336747034}
-  m_Layer: 0
-  m_Name: Front
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &336747034
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336747033}
-  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.001183033, y: -0.38495028, z: 2.7778454}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 556361701}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &342649973
 GameObject:
@@ -3561,7 +3530,7 @@ MonoBehaviour:
   turnSpeed: 94.409645
   speedWhileTurning: 0
   friction: 1.4428618
-  futureLookTime: 0
+  futureLookTime: 1.9368211
   frontPosition: {fileID: 1088281789}
   backPosition: {fileID: 1676110300}
   shouldStop: 0
@@ -3772,7 +3741,7 @@ MonoBehaviour:
   turnSpeed: 83.5937
   speedWhileTurning: 0
   friction: 1.5591403
-  futureLookTime: 0
+  futureLookTime: 1.5384375
   frontPosition: {fileID: 835351005}
   backPosition: {fileID: 1301317525}
   shouldStop: 0
@@ -3983,7 +3952,7 @@ MonoBehaviour:
   turnSpeed: 88.66165
   speedWhileTurning: 0
   friction: 1.4581814
-  futureLookTime: 0
+  futureLookTime: 1.9572036
   frontPosition: {fileID: 2104492953}
   backPosition: {fileID: 1586176644}
   shouldStop: 0
@@ -4132,7 +4101,7 @@ MonoBehaviour:
   turnSpeed: 86.19102
   speedWhileTurning: 0
   friction: 1.560971
-  futureLookTime: 0
+  futureLookTime: 1.9693383
   frontPosition: {fileID: 1088190652}
   backPosition: {fileID: 1782702506}
   shouldStop: 0
@@ -4312,7 +4281,7 @@ MonoBehaviour:
   turnSpeed: 105.30716
   speedWhileTurning: 0
   friction: 1.4193212
-  futureLookTime: 0
+  futureLookTime: 1.9668093
   frontPosition: {fileID: 1231496375}
   backPosition: {fileID: 1260517289}
   shouldStop: 0
@@ -4554,7 +4523,7 @@ MonoBehaviour:
   turnSpeed: 106.57244
   speedWhileTurning: 0
   friction: 1.5538847
-  futureLookTime: 0
+  futureLookTime: 1.5603944
   frontPosition: {fileID: 1314157417}
   backPosition: {fileID: 368371794}
   shouldStop: 0
@@ -4765,7 +4734,7 @@ MonoBehaviour:
   turnSpeed: 122.88097
   speedWhileTurning: 0
   friction: 1.4312658
-  futureLookTime: 0
+  futureLookTime: 1.6086977
   frontPosition: {fileID: 1997180975}
   backPosition: {fileID: 1833331429}
   shouldStop: 0
@@ -4945,7 +4914,7 @@ MonoBehaviour:
   turnSpeed: 122.82532
   speedWhileTurning: 0
   friction: 1.5922668
-  futureLookTime: 0
+  futureLookTime: 1.994344
   frontPosition: {fileID: 1202001353}
   backPosition: {fileID: 249964119}
   shouldStop: 0
@@ -5094,7 +5063,7 @@ MonoBehaviour:
   turnSpeed: 118.67478
   speedWhileTurning: 0
   friction: 1.435245
-  futureLookTime: 0
+  futureLookTime: 1.8174068
   frontPosition: {fileID: 114199555}
   backPosition: {fileID: 1441865592}
   shouldStop: 0
@@ -5336,7 +5305,7 @@ MonoBehaviour:
   turnSpeed: 98.77757
   speedWhileTurning: 0
   friction: 1.4610789
-  futureLookTime: 0
+  futureLookTime: 1.6696084
   frontPosition: {fileID: 967592678}
   backPosition: {fileID: 531491179}
   shouldStop: 0
@@ -5626,7 +5595,7 @@ MonoBehaviour:
   turnSpeed: 100.84272
   speedWhileTurning: 0
   friction: 1.4168441
-  futureLookTime: 0
+  futureLookTime: 1.6573969
   frontPosition: {fileID: 1783850471}
   backPosition: {fileID: 533262631}
   shouldStop: 0
@@ -5775,7 +5744,7 @@ MonoBehaviour:
   turnSpeed: 77.45621
   speedWhileTurning: 0
   friction: 1.437257
-  futureLookTime: 0
+  futureLookTime: 1.5231104
   frontPosition: {fileID: 561906796}
   backPosition: {fileID: 1363990625}
   shouldStop: 0
@@ -6034,7 +6003,7 @@ MonoBehaviour:
   turnSpeed: 111.19143
   speedWhileTurning: 0
   friction: 1.5812628
-  futureLookTime: 0
+  futureLookTime: 1.6052526
   frontPosition: {fileID: 2116152529}
   backPosition: {fileID: 1689412682}
   shouldStop: 0
@@ -6183,7 +6152,7 @@ MonoBehaviour:
   turnSpeed: 102.12449
   speedWhileTurning: 0
   friction: 1.4984854
-  futureLookTime: 0
+  futureLookTime: 1.8599863
   frontPosition: {fileID: 1401463390}
   backPosition: {fileID: 1494344186}
   shouldStop: 0
@@ -6363,7 +6332,7 @@ MonoBehaviour:
   turnSpeed: 126.38647
   speedWhileTurning: 0
   friction: 1.4389472
-  futureLookTime: 0
+  futureLookTime: 1.8786176
   frontPosition: {fileID: 995909990}
   backPosition: {fileID: 1307536833}
   shouldStop: 0
@@ -6543,7 +6512,7 @@ MonoBehaviour:
   turnSpeed: 126.991
   speedWhileTurning: 0
   friction: 1.5657665
-  futureLookTime: 0
+  futureLookTime: 1.6881686
   frontPosition: {fileID: 300731724}
   backPosition: {fileID: 229860293}
   shouldStop: 0
@@ -6692,7 +6661,7 @@ MonoBehaviour:
   turnSpeed: 75.00359
   speedWhileTurning: 0
   friction: 1.5712878
-  futureLookTime: 0
+  futureLookTime: 1.830183
   frontPosition: {fileID: 912606422}
   backPosition: {fileID: 1512240453}
   shouldStop: 0
@@ -6996,7 +6965,7 @@ MonoBehaviour:
   turnSpeed: 76.43141
   speedWhileTurning: 0
   friction: 1.4384604
-  futureLookTime: 0
+  futureLookTime: 1.8981693
   frontPosition: {fileID: 1252278568}
   backPosition: {fileID: 978067268}
   shouldStop: 0
@@ -7145,7 +7114,7 @@ MonoBehaviour:
   turnSpeed: 70.476234
   speedWhileTurning: 0
   friction: 1.4210746
-  futureLookTime: 0
+  futureLookTime: 1.5222301
   frontPosition: {fileID: 362082766}
   backPosition: {fileID: 1526817241}
   shouldStop: 0
@@ -7325,7 +7294,7 @@ MonoBehaviour:
   turnSpeed: 122.44597
   speedWhileTurning: 0
   friction: 1.587674
-  futureLookTime: 0
+  futureLookTime: 1.584058
   frontPosition: {fileID: 1332012798}
   backPosition: {fileID: 136277321}
   shouldStop: 0
@@ -7474,7 +7443,7 @@ MonoBehaviour:
   turnSpeed: 110.63139
   speedWhileTurning: 0
   friction: 1.4837805
-  futureLookTime: 0
+  futureLookTime: 1.5917152
   frontPosition: {fileID: 1436576306}
   backPosition: {fileID: 1427723168}
   shouldStop: 0
@@ -7508,76 +7477,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &556361695 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 606cf3123ef02844eac46bc03965df48,
-    type: 3}
-  m_PrefabInstance: {fileID: 1569818879}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &556361696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556361695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cda127e8a9dbe4d45a31da28ecb30c22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  inspectCarInfrontTimer: 0.21178277
-  desiredTimeDistanceToFront: 2.4002593
-  breakStrength: 2.3829618
-  breakForce: 188.94731
-  acceleration: 4.1346183
-  maxPossibleSpeed: 35.932938
-  speedLimit: 29.767578
-  acceptableStoppingDistance: 4.8498907
-  turnSpeed: 79.26861
-  speedWhileTurning: 0
-  friction: 1.4279732
-  futureLookTime: 0
-  frontPosition: {fileID: 336747034}
-  backPosition: {fileID: 760236376}
-  shouldStop: 0
---- !u!64 &556361697
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556361695}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2523247083630153718, guid: 606cf3123ef02844eac46bc03965df48, type: 3}
---- !u!54 &556361698
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556361695}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!4 &556361701 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 606cf3123ef02844eac46bc03965df48,
-    type: 3}
-  m_PrefabInstance: {fileID: 1569818879}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &559857070
 GameObject:
   m_ObjectHideFlags: 0
@@ -7941,7 +7840,7 @@ MonoBehaviour:
   turnSpeed: 92.21976
   speedWhileTurning: 0
   friction: 1.403774
-  futureLookTime: 0
+  futureLookTime: 1.5542454
   frontPosition: {fileID: 1314373700}
   backPosition: {fileID: 410042527}
   shouldStop: 0
@@ -8200,7 +8099,7 @@ MonoBehaviour:
   turnSpeed: 102.19559
   speedWhileTurning: 0
   friction: 1.5536124
-  futureLookTime: 0
+  futureLookTime: 1.8105127
   frontPosition: {fileID: 1928324689}
   backPosition: {fileID: 2032187077}
   shouldStop: 0
@@ -8349,7 +8248,7 @@ MonoBehaviour:
   turnSpeed: 114.6278
   speedWhileTurning: 0
   friction: 1.4369636
-  futureLookTime: 0
+  futureLookTime: 1.6452591
   frontPosition: {fileID: 2133382100}
   backPosition: {fileID: 1096633632}
   shouldStop: 0
@@ -8498,7 +8397,7 @@ MonoBehaviour:
   turnSpeed: 114.978424
   speedWhileTurning: 0
   friction: 1.5620426
-  futureLookTime: 0
+  futureLookTime: 1.7545065
   frontPosition: {fileID: 83773463}
   backPosition: {fileID: 420711530}
   shouldStop: 0
@@ -8678,7 +8577,7 @@ MonoBehaviour:
   turnSpeed: 86.76041
   speedWhileTurning: 0
   friction: 1.4641756
-  futureLookTime: 0
+  futureLookTime: 1.953806
   frontPosition: {fileID: 183978508}
   backPosition: {fileID: 1463733309}
   shouldStop: 0
@@ -8827,7 +8726,7 @@ MonoBehaviour:
   turnSpeed: 125.77061
   speedWhileTurning: 0
   friction: 1.515729
-  futureLookTime: 0
+  futureLookTime: 1.9852875
   frontPosition: {fileID: 1637986629}
   backPosition: {fileID: 893831568}
   shouldStop: 0
@@ -8976,7 +8875,7 @@ MonoBehaviour:
   turnSpeed: 115.23865
   speedWhileTurning: 0
   friction: 1.4697775
-  futureLookTime: 0
+  futureLookTime: 1.634022
   frontPosition: {fileID: 968461165}
   backPosition: {fileID: 764564783}
   shouldStop: 0
@@ -9321,37 +9220,6 @@ Transform:
   m_Father: {fileID: 1187851880}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &760236375
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 760236376}
-  m_Layer: 0
-  m_Name: Back
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &760236376
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760236375}
-  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.010926962, y: -0.07813156, z: -2.9329014}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 556361701}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &764564782
 GameObject:
   m_ObjectHideFlags: 0
@@ -9591,7 +9459,7 @@ MonoBehaviour:
   turnSpeed: 114.774155
   speedWhileTurning: 0
   friction: 1.4376103
-  futureLookTime: 0
+  futureLookTime: 1.871378
   frontPosition: {fileID: 624780070}
   backPosition: {fileID: 1957784709}
   shouldStop: 0
@@ -10041,7 +9909,7 @@ MonoBehaviour:
   turnSpeed: 77.69684
   speedWhileTurning: 0
   friction: 1.5296195
-  futureLookTime: 0
+  futureLookTime: 1.8518562
   frontPosition: {fileID: 917547596}
   backPosition: {fileID: 1448131488}
   shouldStop: 0
@@ -10351,7 +10219,7 @@ MonoBehaviour:
   turnSpeed: 90.82657
   speedWhileTurning: 0
   friction: 1.4057726
-  futureLookTime: 0
+  futureLookTime: 1.9834604
   frontPosition: {fileID: 283017276}
   backPosition: {fileID: 693201034}
   shouldStop: 0
@@ -10500,7 +10368,7 @@ MonoBehaviour:
   turnSpeed: 79.865654
   speedWhileTurning: 0
   friction: 1.4639187
-  futureLookTime: 0
+  futureLookTime: 1.6214916
   frontPosition: {fileID: 747584398}
   backPosition: {fileID: 1078104696}
   shouldStop: 0
@@ -10649,7 +10517,7 @@ MonoBehaviour:
   turnSpeed: 111.86369
   speedWhileTurning: 0
   friction: 1.5807072
-  futureLookTime: 0
+  futureLookTime: 1.6576089
   frontPosition: {fileID: 803868499}
   backPosition: {fileID: 1906056936}
   shouldStop: 0
@@ -10798,7 +10666,7 @@ MonoBehaviour:
   turnSpeed: 93.12575
   speedWhileTurning: 0
   friction: 1.54364
-  futureLookTime: 0
+  futureLookTime: 1.9543022
   frontPosition: {fileID: 1701861263}
   backPosition: {fileID: 822774673}
   shouldStop: 0
@@ -11124,7 +10992,7 @@ MonoBehaviour:
   turnSpeed: 74.9616
   speedWhileTurning: 0
   friction: 1.4628628
-  futureLookTime: 0
+  futureLookTime: 1.8773248
   frontPosition: {fileID: 1857491922}
   backPosition: {fileID: 880158748}
   shouldStop: 0
@@ -11335,7 +11203,7 @@ MonoBehaviour:
   turnSpeed: 80.22186
   speedWhileTurning: 0
   friction: 1.5258495
-  futureLookTime: 0
+  futureLookTime: 1.6692171
   frontPosition: {fileID: 365444316}
   backPosition: {fileID: 1789341251}
   shouldStop: 0
@@ -11515,7 +11383,7 @@ MonoBehaviour:
   turnSpeed: 94.60787
   speedWhileTurning: 0
   friction: 1.5075855
-  futureLookTime: 0
+  futureLookTime: 1.6516316
   frontPosition: {fileID: 1709353791}
   backPosition: {fileID: 1407947724}
   shouldStop: 0
@@ -11695,7 +11563,7 @@ MonoBehaviour:
   turnSpeed: 107.27436
   speedWhileTurning: 0
   friction: 1.4345647
-  futureLookTime: 0
+  futureLookTime: 1.7126092
   frontPosition: {fileID: 1530992047}
   backPosition: {fileID: 855951249}
   shouldStop: 0
@@ -12278,7 +12146,7 @@ MonoBehaviour:
   turnSpeed: 80.01441
   speedWhileTurning: 0
   friction: 1.4229505
-  futureLookTime: 0
+  futureLookTime: 1.5621762
   frontPosition: {fileID: 47179899}
   backPosition: {fileID: 560433049}
   shouldStop: 0
@@ -12458,7 +12326,7 @@ MonoBehaviour:
   turnSpeed: 88.04081
   speedWhileTurning: 0
   friction: 1.5251507
-  futureLookTime: 0
+  futureLookTime: 1.6930077
   frontPosition: {fileID: 1981835729}
   backPosition: {fileID: 403957915}
   shouldStop: 0
@@ -12748,7 +12616,7 @@ MonoBehaviour:
   turnSpeed: 116.979866
   speedWhileTurning: 0
   friction: 1.467239
-  futureLookTime: 0
+  futureLookTime: 1.5921363
   frontPosition: {fileID: 404266376}
   backPosition: {fileID: 1083677626}
   shouldStop: 0
@@ -12959,7 +12827,7 @@ MonoBehaviour:
   turnSpeed: 102.87195
   speedWhileTurning: 0
   friction: 1.5454633
-  futureLookTime: 0
+  futureLookTime: 1.8351697
   frontPosition: {fileID: 127612342}
   backPosition: {fileID: 1914830614}
   shouldStop: 0
@@ -13108,7 +12976,7 @@ MonoBehaviour:
   turnSpeed: 82.07109
   speedWhileTurning: 0
   friction: 1.5584975
-  futureLookTime: 0
+  futureLookTime: 1.5418495
   frontPosition: {fileID: 579646977}
   backPosition: {fileID: 872439960}
   shouldStop: 0
@@ -13257,7 +13125,7 @@ MonoBehaviour:
   turnSpeed: 73.90824
   speedWhileTurning: 0
   friction: 1.4401385
-  futureLookTime: 0
+  futureLookTime: 1.8599954
   frontPosition: {fileID: 1721126014}
   backPosition: {fileID: 291982736}
   shouldStop: 0
@@ -13468,7 +13336,7 @@ MonoBehaviour:
   turnSpeed: 81.63082
   speedWhileTurning: 0
   friction: 1.4132909
-  futureLookTime: 0
+  futureLookTime: 1.7383027
   frontPosition: {fileID: 750132888}
   backPosition: {fileID: 443257741}
   shouldStop: 0
@@ -13648,7 +13516,7 @@ MonoBehaviour:
   turnSpeed: 121.69544
   speedWhileTurning: 0
   friction: 1.5586586
-  futureLookTime: 0
+  futureLookTime: 1.6959575
   frontPosition: {fileID: 731100566}
   backPosition: {fileID: 1530278761}
   shouldStop: 0
@@ -13797,7 +13665,7 @@ MonoBehaviour:
   turnSpeed: 116.61581
   speedWhileTurning: 0
   friction: 1.5383334
-  futureLookTime: 0
+  futureLookTime: 1.7945732
   frontPosition: {fileID: 1045969341}
   backPosition: {fileID: 1559874172}
   shouldStop: 0
@@ -13946,7 +13814,7 @@ MonoBehaviour:
   turnSpeed: 112.21721
   speedWhileTurning: 0
   friction: 1.4658005
-  futureLookTime: 0
+  futureLookTime: 1.640495
   frontPosition: {fileID: 1246569129}
   backPosition: {fileID: 375746887}
   shouldStop: 0
@@ -14095,7 +13963,7 @@ MonoBehaviour:
   turnSpeed: 108.918526
   speedWhileTurning: 0
   friction: 1.5915884
-  futureLookTime: 0
+  futureLookTime: 1.6597613
   frontPosition: {fileID: 583887099}
   backPosition: {fileID: 1049860890}
   shouldStop: 0
@@ -14337,7 +14205,7 @@ MonoBehaviour:
   turnSpeed: 128.74129
   speedWhileTurning: 0
   friction: 1.412715
-  futureLookTime: 0
+  futureLookTime: 1.5779692
   frontPosition: {fileID: 1185346764}
   backPosition: {fileID: 329315938}
   shouldStop: 0
@@ -14714,7 +14582,7 @@ MonoBehaviour:
   turnSpeed: 72.3686
   speedWhileTurning: 0
   friction: 1.5233318
-  futureLookTime: 0
+  futureLookTime: 1.5489532
   frontPosition: {fileID: 351576313}
   backPosition: {fileID: 102092054}
   shouldStop: 0
@@ -14869,7 +14737,7 @@ MonoBehaviour:
   turnSpeed: 122.05223
   speedWhileTurning: 0
   friction: 1.5651053
-  futureLookTime: 0
+  futureLookTime: 1.940207
   frontPosition: {fileID: 132841048}
   backPosition: {fileID: 894290598}
   shouldStop: 0
@@ -15297,7 +15165,7 @@ MonoBehaviour:
   turnSpeed: 115.46552
   speedWhileTurning: 0
   friction: 1.4382105
-  futureLookTime: 0
+  futureLookTime: 1.7264441
   frontPosition: {fileID: 1905402847}
   backPosition: {fileID: 131757516}
   shouldStop: 0
@@ -15446,7 +15314,7 @@ MonoBehaviour:
   turnSpeed: 117.80367
   speedWhileTurning: 0
   friction: 1.4631442
-  futureLookTime: 0
+  futureLookTime: 1.957063
   frontPosition: {fileID: 1772954264}
   backPosition: {fileID: 517335805}
   shouldStop: 0
@@ -15595,7 +15463,7 @@ MonoBehaviour:
   turnSpeed: 100.952675
   speedWhileTurning: 0
   friction: 1.5463748
-  futureLookTime: 0
+  futureLookTime: 1.582321
   frontPosition: {fileID: 1163689838}
   backPosition: {fileID: 362034127}
   shouldStop: 0
@@ -15744,7 +15612,7 @@ MonoBehaviour:
   turnSpeed: 102.86749
   speedWhileTurning: 0
   friction: 1.5376933
-  futureLookTime: 0
+  futureLookTime: 1.6049677
   frontPosition: {fileID: 1059895011}
   backPosition: {fileID: 521965221}
   shouldStop: 0
@@ -15924,7 +15792,7 @@ MonoBehaviour:
   turnSpeed: 77.04764
   speedWhileTurning: 0
   friction: 1.4850467
-  futureLookTime: 0
+  futureLookTime: 1.8650862
   frontPosition: {fileID: 1867925593}
   backPosition: {fileID: 495614328}
   shouldStop: 0
@@ -16073,7 +15941,7 @@ MonoBehaviour:
   turnSpeed: 116.731415
   speedWhileTurning: 0
   friction: 1.4517184
-  futureLookTime: 0
+  futureLookTime: 1.7879082
   frontPosition: {fileID: 921017731}
   backPosition: {fileID: 1381892267}
   shouldStop: 0
@@ -16253,7 +16121,7 @@ MonoBehaviour:
   turnSpeed: 85.22701
   speedWhileTurning: 0
   friction: 1.4206549
-  futureLookTime: 0
+  futureLookTime: 1.919628
   frontPosition: {fileID: 2008491871}
   backPosition: {fileID: 35667614}
   shouldStop: 0
@@ -16402,7 +16270,7 @@ MonoBehaviour:
   turnSpeed: 124.71899
   speedWhileTurning: 0
   friction: 1.4291481
-  futureLookTime: 0
+  futureLookTime: 1.9627825
   frontPosition: {fileID: 1048262340}
   backPosition: {fileID: 1735413746}
   shouldStop: 0
@@ -16551,7 +16419,7 @@ MonoBehaviour:
   turnSpeed: 91.920006
   speedWhileTurning: 0
   friction: 1.4651933
-  futureLookTime: 0
+  futureLookTime: 1.5904219
   frontPosition: {fileID: 966719654}
   backPosition: {fileID: 162752763}
   shouldStop: 0
@@ -16762,7 +16630,7 @@ MonoBehaviour:
   turnSpeed: 127.69836
   speedWhileTurning: 0
   friction: 1.4473014
-  futureLookTime: 0
+  futureLookTime: 1.9729164
   frontPosition: {fileID: 36684068}
   backPosition: {fileID: 1939469549}
   shouldStop: 0
@@ -16942,7 +16810,7 @@ MonoBehaviour:
   turnSpeed: 107.05949
   speedWhileTurning: 0
   friction: 1.470458
-  futureLookTime: 0
+  futureLookTime: 1.6622336
   frontPosition: {fileID: 1698342118}
   backPosition: {fileID: 1254853564}
   shouldStop: 0
@@ -17037,7 +16905,7 @@ MonoBehaviour:
   turnSpeed: 99.773796
   speedWhileTurning: 0
   friction: 1.530658
-  futureLookTime: 0
+  futureLookTime: 1.6287775
   frontPosition: {fileID: 89231195}
   backPosition: {fileID: 371434163}
   shouldStop: 0
@@ -17262,7 +17130,7 @@ MonoBehaviour:
   turnSpeed: 88.546936
   speedWhileTurning: 0
   friction: 1.4997076
-  futureLookTime: 0
+  futureLookTime: 1.928353
   frontPosition: {fileID: 1130534600}
   backPosition: {fileID: 563622662}
   shouldStop: 0
@@ -17479,7 +17347,7 @@ MonoBehaviour:
   turnSpeed: 99.03979
   speedWhileTurning: 0
   friction: 1.4988291
-  futureLookTime: 0
+  futureLookTime: 1.6626945
   frontPosition: {fileID: 1025783603}
   backPosition: {fileID: 1284120233}
   shouldStop: 0
@@ -17659,7 +17527,7 @@ MonoBehaviour:
   turnSpeed: 78.82742
   speedWhileTurning: 0
   friction: 1.4203738
-  futureLookTime: 0
+  futureLookTime: 1.6356281
   frontPosition: {fileID: 1657293599}
   backPosition: {fileID: 748827109}
   shouldStop: 0
@@ -17870,7 +17738,7 @@ MonoBehaviour:
   turnSpeed: 81.33998
   speedWhileTurning: 0
   friction: 1.4123222
-  futureLookTime: 0
+  futureLookTime: 1.5698502
   frontPosition: {fileID: 1644981422}
   backPosition: {fileID: 1915151534}
   shouldStop: 0
@@ -18081,7 +17949,7 @@ MonoBehaviour:
   turnSpeed: 79.29884
   speedWhileTurning: 0
   friction: 1.498889
-  futureLookTime: 0
+  futureLookTime: 1.8365767
   frontPosition: {fileID: 1963591736}
   backPosition: {fileID: 489768547}
   shouldStop: 0
@@ -18230,7 +18098,7 @@ MonoBehaviour:
   turnSpeed: 111.55412
   speedWhileTurning: 0
   friction: 1.5982271
-  futureLookTime: 0
+  futureLookTime: 1.9302422
   frontPosition: {fileID: 1843043460}
   backPosition: {fileID: 395731274}
   shouldStop: 0
@@ -18410,7 +18278,7 @@ MonoBehaviour:
   turnSpeed: 103.78301
   speedWhileTurning: 0
   friction: 1.5860637
-  futureLookTime: 0
+  futureLookTime: 1.8883638
   frontPosition: {fileID: 2078113017}
   backPosition: {fileID: 1242936221}
   shouldStop: 0
@@ -18444,85 +18312,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1001 &1569818879
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.41
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -18.77
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.0000030547376
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_Name
-      value: SM_Car01 (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 606cf3123ef02844eac46bc03965df48,
-        type: 3}
-      propertyPath: m_TagString
-      value: Car
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 606cf3123ef02844eac46bc03965df48, type: 3}
 --- !u!1 &1579972821
 GameObject:
   m_ObjectHideFlags: 0
@@ -18677,7 +18466,7 @@ MonoBehaviour:
   turnSpeed: 85.490944
   speedWhileTurning: 0
   friction: 1.4119722
-  futureLookTime: 0
+  futureLookTime: 1.942841
   frontPosition: {fileID: 67544590}
   backPosition: {fileID: 1465475899}
   shouldStop: 0
@@ -18832,7 +18621,7 @@ MonoBehaviour:
   turnSpeed: 90.79053
   speedWhileTurning: 0
   friction: 1.4192888
-  futureLookTime: 0
+  futureLookTime: 1.73088
   frontPosition: {fileID: 1226256893}
   backPosition: {fileID: 1579972822}
   shouldStop: 0
@@ -19043,7 +18832,7 @@ MonoBehaviour:
   turnSpeed: 100.83205
   speedWhileTurning: 0
   friction: 1.530381
-  futureLookTime: 0
+  futureLookTime: 1.965786
   frontPosition: {fileID: 773983547}
   backPosition: {fileID: 594715235}
   shouldStop: 0
@@ -19223,7 +19012,7 @@ MonoBehaviour:
   turnSpeed: 99.20585
   speedWhileTurning: 0
   friction: 1.4313546
-  futureLookTime: 0
+  futureLookTime: 1.7194582
   frontPosition: {fileID: 1187735403}
   backPosition: {fileID: 2135102168}
   shouldStop: 0
@@ -19380,7 +19169,7 @@ MonoBehaviour:
   turnSpeed: 118.03515
   speedWhileTurning: 0
   friction: 1.4628013
-  futureLookTime: 0
+  futureLookTime: 1.5349519
   frontPosition: {fileID: 1812145299}
   backPosition: {fileID: 1976760649}
   shouldStop: 0
@@ -19690,7 +19479,7 @@ MonoBehaviour:
   turnSpeed: 71.911674
   speedWhileTurning: 0
   friction: 1.4640996
-  futureLookTime: 0
+  futureLookTime: 1.6450899
   frontPosition: {fileID: 422666157}
   backPosition: {fileID: 933715417}
   shouldStop: 0
@@ -19839,7 +19628,7 @@ MonoBehaviour:
   turnSpeed: 110.34446
   speedWhileTurning: 0
   friction: 1.561675
-  futureLookTime: 0
+  futureLookTime: 1.6467619
   frontPosition: {fileID: 92700084}
   backPosition: {fileID: 1709846020}
   shouldStop: 0
@@ -20267,7 +20056,7 @@ MonoBehaviour:
   turnSpeed: 96.735825
   speedWhileTurning: 0
   friction: 1.5009211
-  futureLookTime: 0
+  futureLookTime: 1.8966224
   frontPosition: {fileID: 1096369068}
   backPosition: {fileID: 368578766}
   shouldStop: 0
@@ -20478,7 +20267,7 @@ MonoBehaviour:
   turnSpeed: 109.968185
   speedWhileTurning: 0
   friction: 1.4808235
-  futureLookTime: 0
+  futureLookTime: 1.7563329
   frontPosition: {fileID: 1788859397}
   backPosition: {fileID: 160066627}
   shouldStop: 0
@@ -20782,7 +20571,7 @@ MonoBehaviour:
   turnSpeed: 115.4899
   speedWhileTurning: 0
   friction: 1.5979296
-  futureLookTime: 0
+  futureLookTime: 1.8456532
   frontPosition: {fileID: 1124676446}
   backPosition: {fileID: 1906421310}
   shouldStop: 0
@@ -20931,7 +20720,7 @@ MonoBehaviour:
   turnSpeed: 93.96858
   speedWhileTurning: 0
   friction: 1.570935
-  futureLookTime: 0
+  futureLookTime: 1.6200904
   frontPosition: {fileID: 1666814192}
   backPosition: {fileID: 315931399}
   shouldStop: 0
@@ -21080,7 +20869,7 @@ MonoBehaviour:
   turnSpeed: 82.55039
   speedWhileTurning: 0
   friction: 1.4421225
-  futureLookTime: 0
+  futureLookTime: 1.9003532
   frontPosition: {fileID: 380235628}
   backPosition: {fileID: 2035138272}
   shouldStop: 0
@@ -21446,7 +21235,7 @@ MonoBehaviour:
   turnSpeed: 92.1188
   speedWhileTurning: 0
   friction: 1.5098239
-  futureLookTime: 0
+  futureLookTime: 1.7360444
   frontPosition: {fileID: 123511780}
   backPosition: {fileID: 1986631580}
   shouldStop: 0
@@ -21657,7 +21446,7 @@ MonoBehaviour:
   turnSpeed: 87.86899
   speedWhileTurning: 0
   friction: 1.4092014
-  futureLookTime: 0
+  futureLookTime: 1.7558246
   frontPosition: {fileID: 837106931}
   backPosition: {fileID: 1101972643}
   shouldStop: 0
@@ -21806,7 +21595,7 @@ MonoBehaviour:
   turnSpeed: 86.65837
   speedWhileTurning: 0
   friction: 1.4145385
-  futureLookTime: 0
+  futureLookTime: 1.7926335
   frontPosition: {fileID: 342649974}
   backPosition: {fileID: 129212177}
   shouldStop: 0
@@ -21986,7 +21775,7 @@ MonoBehaviour:
   turnSpeed: 98.27812
   speedWhileTurning: 0
   friction: 1.5349354
-  futureLookTime: 0
+  futureLookTime: 1.9879569
   frontPosition: {fileID: 1768451066}
   backPosition: {fileID: 922801714}
   shouldStop: 0
@@ -22369,7 +22158,7 @@ MonoBehaviour:
   turnSpeed: 83.37678
   speedWhileTurning: 0
   friction: 1.4800519
-  futureLookTime: 0
+  futureLookTime: 1.92742
   frontPosition: {fileID: 1944038420}
   backPosition: {fileID: 44961826}
   shouldStop: 0
@@ -22518,7 +22307,7 @@ MonoBehaviour:
   turnSpeed: 115.38668
   speedWhileTurning: 0
   friction: 1.4717786
-  futureLookTime: 0
+  futureLookTime: 1.8732203
   frontPosition: {fileID: 642149409}
   backPosition: {fileID: 1891225726}
   shouldStop: 0
@@ -22706,7 +22495,7 @@ MonoBehaviour:
   turnSpeed: 74.53761
   speedWhileTurning: 0
   friction: 1.5620002
-  futureLookTime: 0
+  futureLookTime: 1.8443896
   frontPosition: {fileID: 1898924447}
   backPosition: {fileID: 2048016989}
   shouldStop: 0
@@ -22954,7 +22743,7 @@ MonoBehaviour:
   turnSpeed: 115.19308
   speedWhileTurning: 0
   friction: 1.480374
-  futureLookTime: 0
+  futureLookTime: 1.8652911
   frontPosition: {fileID: 985753354}
   backPosition: {fileID: 1946301185}
   shouldStop: 0
@@ -23018,7 +22807,7 @@ MonoBehaviour:
   turnSpeed: 70.19793
   speedWhileTurning: 0
   friction: 1.5317256
-  futureLookTime: 0
+  futureLookTime: 1.8856689
   frontPosition: {fileID: 1866166656}
   backPosition: {fileID: 131318652}
   shouldStop: 0
@@ -23266,7 +23055,7 @@ MonoBehaviour:
   turnSpeed: 115.876015
   speedWhileTurning: 0
   friction: 1.5411615
-  futureLookTime: 0
+  futureLookTime: 1.868649
   frontPosition: {fileID: 591796011}
   backPosition: {fileID: 1156445215}
   shouldStop: 0
@@ -23415,7 +23204,7 @@ MonoBehaviour:
   turnSpeed: 91.68533
   speedWhileTurning: 0
   friction: 1.4015789
-  futureLookTime: 0
+  futureLookTime: 1.5444258
   frontPosition: {fileID: 1858273497}
   backPosition: {fileID: 65137920}
   shouldStop: 0
@@ -23626,7 +23415,7 @@ MonoBehaviour:
   turnSpeed: 116.726685
   speedWhileTurning: 0
   friction: 1.4361167
-  futureLookTime: 0
+  futureLookTime: 1.9773602
   frontPosition: {fileID: 84258388}
   backPosition: {fileID: 890379753}
   shouldStop: 0
@@ -23752,7 +23541,7 @@ MonoBehaviour:
   turnSpeed: 116.50596
   speedWhileTurning: 0
   friction: 1.5469463
-  futureLookTime: 0
+  futureLookTime: 1.7170954
   frontPosition: {fileID: 1890504518}
   backPosition: {fileID: 81245594}
   shouldStop: 0
@@ -23907,7 +23696,7 @@ MonoBehaviour:
   turnSpeed: 73.490295
   speedWhileTurning: 0
   friction: 1.4455034
-  futureLookTime: 0
+  futureLookTime: 1.9591479
   frontPosition: {fileID: 1603844548}
   backPosition: {fileID: 785235296}
   shouldStop: 0
@@ -24034,3 +23823,72 @@ Transform:
   m_Father: {fileID: 1659882143}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5139628577015001488
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4672794162850963076, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672794162850963076, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672794162850963076, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672794162850963076, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -18.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672794162850963076, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000030547376
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672794162850963076, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672794162850963076, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672794162850963076, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672794162850963076, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672794162850963076, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672794162850963076, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445636055966434366, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_Car01 (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RoadWA
   m_EditorClassIdentifier: 
   color: {r: 0.6, g: 0.99215686, b: 0.7921569, a: 1}
-  startCorner: {x: 15, y: -10}
+  startCorner: {x: 12, y: -6}
   endCorner: {x: 200, y: 0}
   intersection: {fileID: 11400000, guid: 09d3910030e66ee43977b27ccfaf09af, type: 2}
   area: 1

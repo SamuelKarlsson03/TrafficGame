@@ -7,16 +7,23 @@ using UnityEngine.Audio;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
+
+    GameObject newObj;
+    AudioClip[] audioClips;
+
     [SerializeField] AudioSource audioSource;
     [SerializeField] List<GameObject> loopingSoundObjs;
 
-    
 
-    GameObject newObj;
-    [SerializeField] AudioClip[] audioClips;
+    [Header("Helicopter Sounds")]
+    [SerializeField] List<AudioClip> crashCastSounds;
+    [SerializeField] List<AudioClip> ambulanceCastSounds;
+    [SerializeField] List<AudioClip> helicopterHitSoftlySound;
+    [SerializeField] List<AudioClip> helicopterCrashingSound;
 
-  
-    
+
+
+
 
     [Header("Vehicle Sounds")]
     [SerializeField] List<AudioClip> engineSounds;
@@ -183,7 +190,31 @@ public class SoundManager : MonoBehaviour
         PlayPitchedAudioOnLocation(clip, location, volume, Random.Range(minPitch, maxPitch));
     }
 
-    
+    public void PlayRandomCrashCastSound(float volume = 1f)
+    {
 
+        AudioClip clip = crashCastSounds[Random.Range(0, crashCastSounds.Count)];
+        PlayAudio(clip, volume);
+
+    }
+
+    public void PlayRandomAmbulanceCastSound(float volume = 1f)
+    {
+        AudioClip clip = ambulanceCastSounds[Random.Range(0, ambulanceCastSounds.Count)];
+        PlayAudio(clip, volume);
+    }
+
+    public void PlayRandomHelicopterHitByControllerSound(float volume = 1f)
+    {
+        AudioClip clip = helicopterHitSoftlySound[Random.Range(0, helicopterHitSoftlySound.Count)];
+        PlayAudio(clip, volume);
+    }
+
+    public void PlayRandomHelicopterGoingDownSound(float volume = 1f)
+    {
+        AudioClip clip = helicopterCrashingSound[Random.Range(0, helicopterCrashingSound.Count)];
+        PlayAudio(clip, volume);
+    }
+    
 
 }

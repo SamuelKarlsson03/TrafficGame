@@ -4,9 +4,50 @@ using UnityEngine;
 
 public class debugcol : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    public enum Axis
     {
-        Debug.Log(collision.gameObject.name);
-        Debug.Log(collision.transform.root.name);
+        X,
+        Y,
+        Z
+    }
+
+    public Axis axis = Axis.X; // SerializeField to select the axis
+    public float velocity = 5f; // SerializeField for the velocity
+
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            FireWithVelocity();
+        }
+    }
+
+    private void FireWithVelocity()
+    {
+        Vector3 force = Vector3.zero;
+
+        // Determine the axis based on the selected enum
+        switch (axis)
+        {
+            case Axis.X:
+                force = Vector3.right * velocity;
+                break;
+            case Axis.Y:
+                force = Vector3.up * velocity;
+                break;
+            case Axis.Z:
+                force = Vector3.forward * velocity;
+                break;
+        }
+
+        // Apply the velocity as an impulse
+        rb.AddForce(force, ForceMode.Impulse);
     }
 }

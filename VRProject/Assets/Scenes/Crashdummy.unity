@@ -626,10 +626,24 @@ SphereCollider:
   m_GameObject: {fileID: 288091411}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.08414048
   m_Center: {x: -0.08414048, y: 0, z: 0}
+--- !u!136 &288091417
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288091411}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.085
+  m_Height: 0.25
+  m_Direction: 0
+  m_Center: {x: -0.1, y: 0, z: 0}
 --- !u!1 &300176863
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,6 +657,7 @@ GameObject:
   - component: {fileID: 300176865}
   - component: {fileID: 300176864}
   - component: {fileID: 300176868}
+  - component: {fileID: 300176869}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -721,7 +736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300176863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.69, y: 100, z: 1.27}
+  m_LocalPosition: {x: -2.16, y: 1, z: 7.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -744,6 +759,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &300176869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300176863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d27a16d523a8aa46bb3c4c9363e6e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axis: 2
+  velocity: -20
 --- !u!1 &380115392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8329876872790738104, guid: 81bb9eea30387e442899949a80011e55,
@@ -892,7 +921,7 @@ GameObject:
   - component: {fileID: 599916902}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1579,7 +1608,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 81bb9eea30387e442899949a80011e55,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: 81bb9eea30387e442899949a80011e55,
         type: 3}
@@ -1784,7 +1813,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1487668991112747500, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
 --- !u!1 &1309117430 stripped
 GameObject:
@@ -2403,6 +2433,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionVelocityThreshold: 5
+--- !u!136 &1754033244
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754033236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.55
+  m_Height: 1.85
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.85, z: 0}
 --- !u!1 &1766163341 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2228176839346836929, guid: 2435736d6adca23458edd7c80c901e3e,

@@ -17,17 +17,27 @@ public class RagdollController : MonoBehaviour
         SetRagdollEnabled(false);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         Debug.Log("ow");
+        if (collision.transform.root == this.transform || collision.CompareTag("Ground"))
+            return;
 
-        // Check the collision's relative velocity in the X-axis
-        float collisionVelocityX = Mathf.Abs(collision.relativeVelocity.x);
+        // Calculate the magnitude of the collision velocity vector
+        float collisionVelocityMagnitude = collision.attachedRigidbody.velocity.magnitude;
 
-        // If the collision's X velocity is greater than the threshold, activate ragdoll
-        if (collisionVelocityX >= collisionVelocityThreshold)
+        // If the collision's velocity magnitude is greater than the threshold, activate ragdoll
+        if (collisionVelocityMagnitude >= collisionVelocityThreshold)
         {
             SetRagdollEnabled(true);
+
+            // Inherit the velocity from what hit the ragdoll parts
+            Vector3 collisionVelocity = collision.attachedRigidbody.velocity;
+            foreach (Rigidbody rb in rigidbodies)
+            {
+                // Apply the collision velocity to each ragdoll part
+                rb.velocity = collisionVelocity;
+            }
         }
     }
 

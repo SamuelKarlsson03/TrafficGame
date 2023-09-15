@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d11edf54ce9bf640b6d91b065fa7bc9, type: 3}
+  m_Name: IntersectionSection
+  m_EditorClassIdentifier: 
+  intersectionRoad: {fileID: 11400000, guid: 14ec5a2191c0e794daa20b3436c2c686, type: 2}
+  inboundRoads:
+  - {fileID: 11400000, guid: f77f2457a066bb3429c8468b503c3767, type: 2}
+  - {fileID: 11400000, guid: 156f087d34bb6f44db1c3cbefea700b1, type: 2}
+  - {fileID: 11400000, guid: f94d9eeb7cb96e34e8ed5ce6d5a97ab0, type: 2}
+  - {fileID: 11400000, guid: 9233b9aeaf0007442b6fcbb15331f3f4, type: 2}
+  outgoingRoads:
+  - {fileID: 11400000, guid: a164302f9ab400e47aa4b1860be95231, type: 2}
+  - {fileID: 11400000, guid: 63a0851517cd9b94d97c506d0850a85f, type: 2}
+  - {fileID: 11400000, guid: ab6ccd2a27400884a97e8594b14d8dba, type: 2}
+  - {fileID: 11400000, guid: a7e284e442553c2498faba4744d176e0, type: 2}

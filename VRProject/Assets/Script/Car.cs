@@ -42,6 +42,7 @@ public class Car : MonoBehaviour
     void Start()
     {
         turnDirection = Random.Range(-1, 2);
+        shouldStop = true;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -104,36 +105,39 @@ public class Car : MonoBehaviour
 
         //Stablilize to lane
 
-        Vector3 positionInFuture = frontPosition.position + velocity * futureLookTime;
-        Road roadInFuture = RoadManager.instance.GetRoadFromPoint(positionInFuture);
-        if (roadInFuture.roadDirection.magnitude > 0.001f)
-        {
-            if (Vector3.Dot(roadInFuture.roadDirection, transform.forward) < 0.95)
-            {
-                transform.Rotate(Vector3.up, turnDirection * turnSpeed * Time.deltaTime);
-                Vector3 forwardLeft = transform.forward;
-                transform.Rotate(Vector3.up, -2 * turnDirection * turnSpeed * Time.deltaTime);
-                Vector3 forwardRight = transform.forward;
-                if (Vector3.Dot(roadInFuture.roadDirection, forwardLeft) > Vector3.Dot(roadInFuture.roadDirection, forwardRight))
-                {
-                    transform.Rotate(Vector3.up, 2 * turnDirection * turnSpeed * Time.deltaTime);
-                }
-            }
-            else if (RoadManager.instance.DistanceFromCenterOfRoad(positionInFuture,roadInFuture) > 1.5f)
-            {
-                Vector3 positionInFutureLeft = frontPosition.position + (velocity + transform.right*Time.deltaTime) * futureLookTime;
-                Vector3 positionInFutureRight = frontPosition.position + (velocity + transform.right * -Time.deltaTime) * futureLookTime;
-                if(RoadManager.instance.DistanceFromCenterOfRoad(positionInFutureLeft,roadInFuture) > RoadManager.instance.DistanceFromCenterOfRoad(positionInFutureRight, roadInFuture))
-                {
-                    transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
-                }
-                else
-                {
-                    transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
-                }
+        //Vector3 positionInFuture = frontPosition.position + velocity * futureLookTime;
+        //Road roadInFuture = RoadManager.instance.GetRoadFromPoint(positionInFuture);
+        //if (roadInFuture != null)
+        //{
+        //    if (roadInFuture.roadDirection.magnitude > 0.001f)
+        //    {
+        //        if (Vector3.Dot(roadInFuture.roadDirection, transform.forward) < 0.95)
+        //        {
+        //            transform.Rotate(Vector3.up, turnDirection * turnSpeed * Time.deltaTime);
+        //            Vector3 forwardLeft = transform.forward;
+        //            transform.Rotate(Vector3.up, -2 * turnDirection * turnSpeed * Time.deltaTime);
+        //            Vector3 forwardRight = transform.forward;
+        //            if (Vector3.Dot(roadInFuture.roadDirection, forwardLeft) > Vector3.Dot(roadInFuture.roadDirection, forwardRight))
+        //            {
+        //                transform.Rotate(Vector3.up, 2 * turnDirection * turnSpeed * Time.deltaTime);
+        //            }
+        //        }
+        //        else if (RoadManager.instance.DistanceFromCenterOfRoad(positionInFuture, roadInFuture) > 1.5f)
+        //        {
+        //            Vector3 positionInFutureLeft = frontPosition.position + (velocity + transform.right * Time.deltaTime) * futureLookTime;
+        //            Vector3 positionInFutureRight = frontPosition.position + (velocity + transform.right * -Time.deltaTime) * futureLookTime;
+        //            if (RoadManager.instance.DistanceFromCenterOfRoad(positionInFutureLeft, roadInFuture) > RoadManager.instance.DistanceFromCenterOfRoad(positionInFutureRight, roadInFuture))
+        //            {
+        //                transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
+        //            }
+        //            else
+        //            {
+        //                transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
+        //            }
 
-            }
-        }
+        //        }
+        //    }
+        //}
 
         if (distanceIfNoVelocityChange <= 0)
         {

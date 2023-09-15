@@ -7,7 +7,7 @@ public class SignHolder : MonoBehaviour
 
     private void Start()
     {
-        childSign = GetComponentInChildren<SignManager>().gameObject;
+        //childSign = GetComponentInChildren<SignManager>().gameObject;
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.enabled = false;
     }

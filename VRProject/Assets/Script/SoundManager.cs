@@ -10,10 +10,15 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] List<GameObject> loopingSoundObjs;
 
+    
+
     GameObject newObj;
     [SerializeField] AudioClip[] audioClips;
 
-    [Header("Sounds")]
+  
+    
+
+    [Header("Vehicle Sounds")]
     [SerializeField] List<AudioClip> engineSounds;
     [SerializeField] List<AudioClip> hornSounds;
     [SerializeField] List<AudioClip> screamSounds;
@@ -136,22 +141,22 @@ public class SoundManager : MonoBehaviour
 
     }
 
-    public void PlayRandomHornSound(Vector3 location, float volume = 1)
+    public void PlayRandomHornSound(Vector3 location, float volume = 1, float minPitch = 0.9f, float maxPitch = 1.1f)
     {
         AudioClip clip = hornSounds[Random.Range(0, hornSounds.Count)];
-        PlayAudioOnLocation(clip, location, volume);
+        PlayPitchedAudioOnLocation(clip, location, volume, Random.Range(minPitch, maxPitch));
     }
 
-    public void PlayRandomScreamSound(Vector3 location, float volume = 1)
+    public void PlayRandomScreamSound(Vector3 location, float volume = 1, float minPitch = 0.9f, float maxPitch = 1.1f)
     {
         AudioClip clip = screamSounds[Random.Range(0, screamSounds.Count)];
-        PlayAudioOnLocation(clip, location, volume);
+        PlayPitchedAudioOnLocation(clip, location, volume, Random.Range(minPitch, maxPitch));
     }
 
-    public void PlayRandomHitSound(Vector3 location, float volume = 1)
+    public void PlayRandomHitSound(Vector3 location, float volume = 1, float minPitch = 0.9f, float maxPitch = 1.1f)
     {
         AudioClip clip = hitSounds[Random.Range(0, hitSounds.Count)];
-        PlayAudioOnLocation(clip, location, volume);
+        PlayPitchedAudioOnLocation(clip, location, volume, Random.Range(minPitch, maxPitch));
     }
 
     public void PlayRandomAlarmSoundLooping(Vector3 location, float volume = 1)
@@ -160,10 +165,10 @@ public class SoundManager : MonoBehaviour
         PlayLoopingAudioOnLocation(clip, location, volume);
     }
 
-    public void PlayRandomTireSound(Vector3 location, float volume = 1)
+    public void PlayRandomTireSound(Vector3 location, float volume = 1, float minPitch = 0.9f, float maxPitch = 1.1f)
     {
         AudioClip clip = tireSounds[Random.Range(0, tireSounds.Count)];
-        PlayAudioOnLocation(clip, location, volume);
+        PlayPitchedAudioOnLocation(clip, location, volume, Random.Range(minPitch, maxPitch));
     }
 
     public void PlayRandomEngineSoundLooping(Vector3 location, float volume = 1)
@@ -172,10 +177,13 @@ public class SoundManager : MonoBehaviour
         PlayLoopingAudioOnLocation(clip, location, volume);
     }
 
-    public void PlayRandomCrashSound(Vector3 location, float volume = 1)
+    public void PlayRandomCrashSound(Vector3 location, float volume = 1, float minPitch = 0.9f, float maxPitch = 1.1f)
     {
         AudioClip clip = crashSounds[Random.Range(0, crashSounds.Count)];
-        PlayAudioOnLocation(clip, location, volume);
+        PlayPitchedAudioOnLocation(clip, location, volume, Random.Range(minPitch, maxPitch));
     }
+
+    
+
 
 }

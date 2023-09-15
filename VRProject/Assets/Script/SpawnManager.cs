@@ -11,13 +11,11 @@ public class SpawnManager : MonoBehaviour
     public float maxSpawnInterval = 10f;
     private float Timer;
 
-    // Start is called before the first frame update
     void Start()
     {
         Timer = Random.Range(minSpawnInterval, maxSpawnInterval);
     }
 
-    // Update is called once per frame
     void Update()
     {
         Timer -= Time.deltaTime;

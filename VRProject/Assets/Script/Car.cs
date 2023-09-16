@@ -42,7 +42,7 @@ public class Car : MonoBehaviour
     void Start()
     {
         turnDirection = Random.Range(-1, 2);
-        shouldStop = true;
+        //shouldStop = true;
         rb = GetComponent<Rigidbody>();
     }
 

@@ -701,7 +701,7 @@ PrefabInstance:
     - target: {fileID: 4878787750118635030, guid: a03c169a077d19147b3c8078a5bc90e0,
         type: 3}
       propertyPath: heightReduction
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4878787750118635030, guid: a03c169a077d19147b3c8078a5bc90e0,
         type: 3}

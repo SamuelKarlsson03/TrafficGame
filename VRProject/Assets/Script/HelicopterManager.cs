@@ -21,6 +21,7 @@ public class HelicopterManager : MonoBehaviour
     [SerializeField] float horiMoveAmount = 0.5f;
     [SerializeField] float crashSpinAngle = 66f;
     [SerializeField] float heightReduction = 1f;
+   
 
     [SerializeField] GameObject helicopterObject;
 
@@ -42,10 +43,10 @@ public class HelicopterManager : MonoBehaviour
            StartCoroutine(MoveHelicopterUpDown());
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            CrashHelicopter();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    CrashHelicopter();
+        //}
 
         if (!shouldMove)
         {
@@ -68,7 +69,7 @@ public class HelicopterManager : MonoBehaviour
     private void CrashMovement()
     {
         float randomHeightReduction = heightReduction * Random.Range(0.9f, 1.1f);
-        transform.position += new Vector3(1,0,0);
+        transform.position += new Vector3(0,-1f,0) * Time.deltaTime * heightReduction;
        
         transform.Rotate(Vector3.up, crashSpinAngle * Time.deltaTime);
     }

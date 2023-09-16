@@ -14,8 +14,9 @@ public class SignControls : MonoBehaviour
     void Update()
     {
         Vector3 direction = transform.TransformDirection(Vector3.right);
-
-        if (Physics.BoxCast(transform.position, boxCastSize / 2, direction, out RaycastHit hit, transform.rotation, maxReach))
+        RaycastHit hit;
+        if (Physics.BoxCast(transform.position, boxCastSize / 2, direction, out hit, transform.rotation, maxReach) 
+            || Physics.BoxCast(transform.position, boxCastSize / 2, -direction, out hit, transform.rotation, maxReach))
         {
             if (hit.collider.CompareTag("Car"))
             {

@@ -5,56 +5,38 @@ using UnityEngine;
 public class HelicopterManager : MonoBehaviour
 {
     AudioSource audioSource;
-
-    [SerializeField] GameObject rotationTarget;
+    Animator animator;
 
     [SerializeField] AudioClip introductionSound;
     [SerializeField] bool hasIntroduced = false;
     [SerializeField] float timeUntilIntroduction = 3f;
 
     [Header("Helicopter Move Variables")]
-    [SerializeField] float rotationAngle;
-    [SerializeField] bool shouldMove = true;
-    [SerializeField] bool isMovingUpDown = false;
-    [SerializeField] bool shouldMoveUp = true;
-    [SerializeField] float horiMoveTime = 3f;
-    [SerializeField] float horiMoveAmount = 0.5f;
+    [SerializeField] bool hasCrashed = false;
     [SerializeField] float crashSpinAngle = 66f;
-    [SerializeField] float heightReduction = 1f;
-   
-
-    [SerializeField] GameObject helicopterObject;
+    [SerializeField] float fallForce;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         StartCoroutine(PlayIntroduction());
     }
 
     private void Update()
     {
-        if (shouldMove)
-        {
-            RotateHelicopter();
-        }
 
-        if (!isMovingUpDown && shouldMove)
-        {
-           StartCoroutine(MoveHelicopterUpDown());
-        }
-
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    CrashHelicopter();
-        //}
-
-        if (!shouldMove)
+        if (hasCrashed)
         {
             CrashMovement();
         }
 
-    }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            CrashHelicopter();
+        }
 
+    }
     public void PlayAudio(AudioClip clip, float volume = 1)
     {
 
@@ -68,10 +50,9 @@ public class HelicopterManager : MonoBehaviour
 
     private void CrashMovement()
     {
-        float randomHeightReduction = heightReduction * Random.Range(0.9f, 1.1f);
-        transform.position += new Vector3(0,-1f,0) * Time.deltaTime * heightReduction;
-       
-        transform.Rotate(Vector3.up, crashSpinAngle * Time.deltaTime);
+        transform.localPosition += new Vector3(10, -fallForce, 0) * Time.deltaTime;
+
+        transform.Rotate(0, crashSpinAngle * Time.deltaTime, 0);
     }
 
     IEnumerator PlayIntroduction()
@@ -82,60 +63,12 @@ public class HelicopterManager : MonoBehaviour
         yield return null;
     }
 
-    private void RotateHelicopter()
-    {
-        transform.Rotate(rotationTarget.transform.position, rotationAngle * Time.deltaTime);
-    }
-
-    IEnumerator MoveHelicopterUpDown()
-    {
-        isMovingUpDown = true;
-        shouldMoveUp = (!shouldMoveUp);
-
-        float timeToMove = 0;
-
-        float targetHeight = (horiMoveAmount + transform.position.y);
-
-        if (shouldMoveUp)
-        {
-
-            while (timeToMove < horiMoveTime)
-            {
-                transform.position += new Vector3(0, horiMoveAmount / horiMoveTime * Time.deltaTime, 0);
-                Debug.Log("Move Up");
-                timeToMove += Time.deltaTime;
-                yield return null;
-            }
-            //transform.position = new Vector3(0, targetHeight, 0);
-        }
-
-        if (!shouldMoveUp)
-        {
-
-            while (timeToMove < horiMoveTime)
-            {
-                horiMoveAmount *= -1;
-                transform.position += new Vector3(0, horiMoveAmount / horiMoveTime * Time.deltaTime, 0);
-                Debug.Log("Move Down");
-                timeToMove += Time.deltaTime;
-                yield return null;
-            }
-            //transform.position = new Vector3(0, targetHeight * -1, 0);
-        }
-
-        isMovingUpDown = false;
-        yield return null;
-
-    }
 
     private void CrashHelicopter()
     {
-        shouldMove = false;
+        hasCrashed = true;
         StopAllCoroutines();
-
-        Vector3 newPos = helicopterObject.transform.position;
-        transform.position = newPos;
-        helicopterObject.transform.localPosition = Vector3.zero;
+        animator.enabled = false;
 
     }
 
@@ -152,7 +85,5 @@ public class HelicopterManager : MonoBehaviour
             CrashHelicopter();
         }
     }
-
-    
 
 }

@@ -9,6 +9,7 @@ TagManager:
   - Pedestrian
   - Sign
   - Ground
+  - Vehicle
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,7 @@ public class RagdollController : MonoBehaviour
     private Rigidbody[] rigidbodies; // Store the rigidbodies of the ragdoll parts
     private Animator animator; // Reference to the Animator
 
-    [SerializeField] private float collisionVelocityThreshold = 2f; // Minimum X velocity to trigger ragdoll
+    [SerializeField] private float collisionVelocityThreshold = 1f; // Minimum X velocity to trigger ragdoll
 
     private void Start()
     {
@@ -26,6 +26,7 @@ public class RagdollController : MonoBehaviour
         // Calculate the magnitude of the collision velocity vector
         float collisionVelocityMagnitude = collision.attachedRigidbody.velocity.magnitude;
 
+        Debug.Log(collisionVelocityMagnitude);
         // If the collision's velocity magnitude is greater than the threshold, activate ragdoll
         if (collisionVelocityMagnitude >= collisionVelocityThreshold)
         {

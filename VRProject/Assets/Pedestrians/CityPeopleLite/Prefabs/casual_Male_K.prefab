@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730fcc02e0c7a2343bf4ee086544e053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionVelocityThreshold: 2
+  collisionVelocityThreshold: 1
 --- !u!1 &944684095800602908
 GameObject:
   m_ObjectHideFlags: 0

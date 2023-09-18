@@ -46,19 +46,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4084bc28631d94948a49a0eee5641bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationTarget: {fileID: 0}
   introductionSound: {fileID: 8300000, guid: 3449addd96ab20a4c8562de743330f70, type: 3}
   hasIntroduced: 0
   timeUntilIntroduction: 3
   rotationAngle: 10
-  shouldMove: 1
+  hasCrashed: 0
   isMovingUpDown: 0
   shouldMoveUp: 1
   horiMoveTime: 0.3
   horiMoveAmount: 0.25
   crashSpinAngle: 66
   heightReduction: 1
-  helicopterChildren: []
 --- !u!82 &4878787750118635027
 AudioSource:
   m_ObjectHideFlags: 0
@@ -182,7 +180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4878787751639275139}
   m_LocalRotation: {x: 0.7017347, y: -0, z: -0, w: 0.7124384}
-  m_LocalPosition: {x: 6.1, y: 4.2, z: 0.73}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []

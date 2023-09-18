@@ -14,16 +14,11 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] List<GameObject> loopingSoundObjs;
 
-
     [Header("Helicopter Sounds")]
     [SerializeField] List<AudioClip> crashCastSounds;
     [SerializeField] List<AudioClip> ambulanceCastSounds;
     [SerializeField] List<AudioClip> helicopterHitSoftlySound;
     [SerializeField] List<AudioClip> helicopterCrashingSound;
-
-
-
-
 
     [Header("Vehicle Sounds")]
     [SerializeField] List<AudioClip> engineSounds;
@@ -46,7 +41,6 @@ public class SoundManager : MonoBehaviour
         }
 
         loopingSoundObjs = new List<GameObject>();
-
 
     }
 
@@ -99,7 +93,6 @@ public class SoundManager : MonoBehaviour
                 return;
             }
         }
-
 
     }
 

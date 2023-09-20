@@ -23,6 +23,8 @@ public class Car : MonoBehaviour
 
     [SerializeField] Transform frontPosition;
     [SerializeField] Transform backPosition;
+    private Road currentRoad;
+    private bool hasTurned;
 
     public bool shouldStop;
     private bool grounded;
@@ -41,8 +43,10 @@ public class Car : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        turnDirection = Random.Range(-1, 2);
-        //shouldStop = true;
+        turnDirection = 1;
+        shouldStop = Random.Range(0, 2) == 0;
+        shouldStop = false;
+        currentRoad = RoadManager.instance.GetRoadFromPoint(transform.position);
         rb = GetComponent<Rigidbody>();
     }
 
@@ -101,55 +105,101 @@ public class Car : MonoBehaviour
             }
         }
 
-        Road currentRoad = RoadManager.instance.GetRoadFromPoint(transform.position);
+        if (!hasTurned)
+        {
+            if (RoadManager.instance.GetAreaFromPoint(transform.position) == Area.intersection)
+            {
+                switch (Random.Range(0, 3))
+                {
+                    case 0:
+                        currentRoad = RoadManager.instance.GetLeftTurnRoad(currentRoad);
+                        Debug.Log(gameObject.name + ": turning left");
+                        break;
+                    case 1:
+                        currentRoad = RoadManager.instance.GetRightTurnRoad(currentRoad);
+                        Debug.Log(gameObject.name + ": turning right");
+                        break;
+                    default:
+                        currentRoad = RoadManager.instance.GetRoadInFront(currentRoad);
+                        Debug.Log(gameObject.name + ": going forward");
+                        break;
+                }
+                //Debug.Log(gameObject.name + " is turning from " + currentRoad.name);
+                //currentRoad = RoadManager.instance.GetLeftTurnRoad(currentRoad);
+                //Debug.Log(gameObject.name + " is turning to" + currentRoad.name);
+                //Debug.Log(gameObject.name + ": turning left");
+                hasTurned = true;
+            }
+        }
 
         //Stablilize to lane
 
-        //Vector3 positionInFuture = frontPosition.position + velocity * futureLookTime;
-        //Road roadInFuture = RoadManager.instance.GetRoadFromPoint(positionInFuture);
-        //if (roadInFuture != null)
-        //{
-        //    if (roadInFuture.roadDirection.magnitude > 0.001f)
-        //    {
-        //        if (Vector3.Dot(roadInFuture.roadDirection, transform.forward) < 0.95)
-        //        {
-        //            transform.Rotate(Vector3.up, turnDirection * turnSpeed * Time.deltaTime);
-        //            Vector3 forwardLeft = transform.forward;
-        //            transform.Rotate(Vector3.up, -2 * turnDirection * turnSpeed * Time.deltaTime);
-        //            Vector3 forwardRight = transform.forward;
-        //            if (Vector3.Dot(roadInFuture.roadDirection, forwardLeft) > Vector3.Dot(roadInFuture.roadDirection, forwardRight))
-        //            {
-        //                transform.Rotate(Vector3.up, 2 * turnDirection * turnSpeed * Time.deltaTime);
-        //            }
-        //        }
-        //        else if (RoadManager.instance.DistanceFromCenterOfRoad(positionInFuture, roadInFuture) > 1.5f)
-        //        {
-        //            Vector3 positionInFutureLeft = frontPosition.position + (velocity + transform.right * Time.deltaTime) * futureLookTime;
-        //            Vector3 positionInFutureRight = frontPosition.position + (velocity + transform.right * -Time.deltaTime) * futureLookTime;
-        //            if (RoadManager.instance.DistanceFromCenterOfRoad(positionInFutureLeft, roadInFuture) > RoadManager.instance.DistanceFromCenterOfRoad(positionInFutureRight, roadInFuture))
-        //            {
-        //                transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
-        //            }
-        //            else
-        //            {
-        //                transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
-        //            }
-
-        //        }
-        //    }
-        //}
-
-        if (distanceIfNoVelocityChange <= 0)
+        Vector3 positionInFuture = frontPosition.position + velocity * futureLookTime;
+        Road roadInFuture = currentRoad;
+        if (roadInFuture != null)
         {
-            //Slow down
-            SlowDown();
-            return;
+            if (roadInFuture.roadDirection.magnitude > 0.001f)
+            {
+                if (Vector3.Dot(roadInFuture.roadDirection, transform.forward) < 0.76f)
+                {
+                    transform.Rotate(Vector3.up, turnDirection * turnSpeed * Time.deltaTime);
+                    Vector3 forwardLeft = transform.forward;
+                    transform.Rotate(Vector3.up, -2 * turnDirection * turnSpeed * Time.deltaTime);
+                    Vector3 forwardRight = transform.forward;
+                    if (Vector3.Dot(roadInFuture.roadDirection, forwardLeft) > Vector3.Dot(roadInFuture.roadDirection, forwardRight))
+                    {
+                        transform.Rotate(Vector3.up, 2 * turnDirection * turnSpeed * Time.deltaTime);
+                    }
+                    else
+                    {
+                    }
+                }
+                else if (RoadManager.instance.DistanceFromCenterOfRoad(positionInFuture, roadInFuture) > 0.75f)
+                {
+                    Vector3 positionInFutureLeft = frontPosition.position + (velocity + transform.right * Time.deltaTime) * futureLookTime;
+                    Vector3 positionInFutureRight = frontPosition.position + (velocity + transform.right * -Time.deltaTime) * futureLookTime;
+                    if (RoadManager.instance.DistanceFromCenterOfRoad(positionInFutureLeft, roadInFuture) > RoadManager.instance.DistanceFromCenterOfRoad(positionInFutureRight, roadInFuture))
+                    {
+                        transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
+                    }
+                    else
+                    {
+                        transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
+                    }
+
+                }
+                else if (Vector3.Dot(roadInFuture.roadDirection, transform.forward) < 0.9999f)
+                {
+                    transform.Rotate(Vector3.up, turnDirection * turnSpeed * Time.deltaTime);
+                    Vector3 forwardLeft = transform.forward;
+                    transform.Rotate(Vector3.up, -2 * turnDirection * turnSpeed * Time.deltaTime);
+                    Vector3 forwardRight = transform.forward;
+                    if (Vector3.Dot(roadInFuture.roadDirection, forwardLeft) > Vector3.Dot(roadInFuture.roadDirection, forwardRight))
+                    {
+                        transform.Rotate(Vector3.up, 2 * turnDirection * turnSpeed * Time.deltaTime);
+                    }
+                    else
+                    {
+                        transform.Rotate(Vector3.up, turnDirection * turnSpeed * Time.deltaTime);
+                    }
+                }
+            }
         }
 
-        float distanceToIntersection = RoadManager.instance.DistanceToIntersection(transform.position);
-        if (distanceToIntersection != -1 && distanceToIntersection < 3f + velocity.magnitude * desiredTimeDistanceToFront)
+        if (shouldStop)
         {
-            if (shouldStop)
+            if (distanceIfNoVelocityChange <= 0)
+            {
+                //Slow down
+                SlowDown();
+                return;
+            }
+        }
+        if (shouldStop)
+        {
+
+            float distanceToIntersection = RoadManager.instance.DistanceToIntersection(transform.position);
+            if (distanceToIntersection != -1 && distanceToIntersection < 3f + velocity.magnitude * desiredTimeDistanceToFront)
             {
                 SlowDown();
                 return;
@@ -160,27 +210,32 @@ public class Car : MonoBehaviour
             }
         }
 
-        if (velocity.magnitude - 2f > speedLimit)
+        if (shouldStop && velocity.magnitude - 2f > speedLimit)
         {
             SlowDown();
             return;
         }
 
-        if (distanceIfNoVelocityChange >= acceptableStoppingDistance - (velocity - carInFrontVelocity).magnitude * desiredTimeDistanceToFront && velocity.magnitude < speedLimit + 3f)
+        if (shouldStop)
         {
-            SpeedUp();
-
-            return;
-        }
-
-        if (velocity.magnitude < speedLimit && RoadManager.instance.GetAreaFromPoint(frontPosition.position + velocity * 2f) == Area.offRoad || RoadManager.instance.GetAreaFromPoint(frontPosition.position + velocity * 2f) == Area.intersection)
-        {
-            //Chagne direction slightly
-            SlowDown();
-            if (velocity.magnitude < speedLimit && RoadManager.instance.GetAreaFromPoint(frontPosition.position + velocity * 2f) == Area.offRoad || RoadManager.instance.GetAreaFromPoint(frontPosition.position + velocity * 2f) == Area.intersection)
+            if (distanceIfNoVelocityChange >= acceptableStoppingDistance - (velocity - carInFrontVelocity).magnitude * desiredTimeDistanceToFront && velocity.magnitude < speedLimit + 3f)
             {
-                transform.Rotate(Vector3.up, turnSpeed * turnDirection * Time.deltaTime);
+                SpeedUp();
+                return;
             }
+        }
+        else
+        {
+            if (velocity.magnitude < speedLimit + 3f)
+            {
+                SpeedUp();
+                return;
+            }
+        }
+
+        if (shouldStop && velocity.magnitude < speedLimit && RoadManager.instance.GetAreaFromPoint(frontPosition.position + velocity * 2f) == Area.offRoad || RoadManager.instance.GetAreaFromPoint(frontPosition.position + velocity * 1f) == Area.intersection)
+        {
+            SlowDown();
             return;
         }
         else

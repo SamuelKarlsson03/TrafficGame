@@ -26,7 +26,8 @@ public class Car : MonoBehaviour
     private Road currentRoad;
     private bool hasTurned;
 
-    public bool shouldStop;
+    public bool stopping;
+    private bool shouldStop;
     private bool grounded;
     private Vector3 velocity;
     private int turnDirection;
@@ -63,6 +64,14 @@ public class Car : MonoBehaviour
 
     void Update()
     {
+        if(RoadManager.instance.GetAreaFromPoint(transform.position) == Area.away)
+        {
+            shouldStop = false;
+        }
+        else
+        {
+            shouldStop = stopping;
+        }
         grounded = Grounded();
         if (grounded)
         {

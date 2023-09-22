@@ -3,15 +3,16 @@ using Drawing;
 
 public class SignControls : MonoBehaviour
 {
-    Vector3 boxCastSize;
-    float maxReach = 5f;
+    [SerializeField] Vector3 boxCastSize;
+    [SerializeField] bool stopSign;
+    [SerializeField] float maxReach = 5f;
 
     private void Start()
     {
-        boxCastSize = GetComponent<BoxCollider>().size;
+        //boxCastSize = GetComponent<BoxCollider>().size;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 direction = transform.TransformDirection(Vector3.right);
         RaycastHit hit;
@@ -21,11 +22,16 @@ public class SignControls : MonoBehaviour
             if (hit.collider.CompareTag("Car"))
             {
                 Debug.Log("carhit");
-                //Do Stuff
+                hit.collider.GetComponent<Car>().stopping = stopSign;
             }
         }
 
         //Debug
-        Draw.WireBox(transform.TransformPoint(Vector3.right * (maxReach / 2)), transform.rotation, new Vector3(5f, boxCastSize.y, boxCastSize.z), Color.green);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(transform.TransformPoint(Vector3.right * (maxReach / 2)), new Vector3(maxReach, boxCastSize.y, boxCastSize.z));
     }
 }

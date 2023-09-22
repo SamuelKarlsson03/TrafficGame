@@ -354,6 +354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226a651d2645d784fb892881075089f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxCastSize: {x: 2.4, y: 8.5, z: 10.2}
+  stopSign: 0
+  maxReach: 40.64
 --- !u!95 &14268827
 Animator:
   serializedVersion: 5
@@ -3249,6 +3252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226a651d2645d784fb892881075089f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxCastSize: {x: 0, y: 0, z: 0}
+  stopSign: 0
+  maxReach: 5
 --- !u!95 &1733357797
 Animator:
   serializedVersion: 5

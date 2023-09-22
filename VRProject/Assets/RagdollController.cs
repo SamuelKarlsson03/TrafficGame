@@ -1,7 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class RagdollController : MonoBehaviour
 {
+    public UnityEvent eventTrigger;
+    public GameObject particlesys;
     private Rigidbody[] rigidbodies; // Store the rigidbodies of the ragdoll parts
     private Animator animator; // Reference to the Animator
 
@@ -12,7 +16,6 @@ public class RagdollController : MonoBehaviour
         // Get references to the rigidbodies and animator
         rigidbodies = GetComponentsInChildren<Rigidbody>();
         animator = GetComponent<Animator>();
-
         // Disable the ragdoll initially
         SetRagdollEnabled(false);
     }
@@ -30,12 +33,18 @@ public class RagdollController : MonoBehaviour
         // If the collision's velocity magnitude is greater than the threshold, activate ragdoll
         if (collisionVelocityMagnitude >= collisionVelocityThreshold)
         {
-            //Debug.Log(GetComponent<Collider>());
-            //GetComponent<Collider>().enabled = false;
+            Vector3 center = transform.position + (Vector3.up * 0.85f);
+            Vector3 hitPosition = collision.ClosestPointOnBounds(center);
+            Quaternion hitRotation = Quaternion.LookRotation(hitPosition - center, Vector3.up);
+
+            particlesys.transform.position = hitPosition;
+            particlesys.transform.rotation = hitRotation;
+
+            eventTrigger.Invoke();
             SetRagdollEnabled(true);
 
             // Inherit the velocity from what hit the ragdoll parts
-            Vector3 collisionVelocity = collision.attachedRigidbody.velocity;
+            Vector3 collisionVelocity = collision.attachedRigidbody.velocity * 10;
             foreach (Rigidbody rb in rigidbodies)
             {
                 // Apply the collision velocity to each ragdoll part

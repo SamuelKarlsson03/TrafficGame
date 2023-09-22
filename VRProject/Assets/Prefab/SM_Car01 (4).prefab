@@ -197,13 +197,13 @@ MonoBehaviour:
   desiredTimeDistanceToFront: 2.4002593
   breakStrength: 2.383
   breakForce: 188.95
-  acceleration: 10.51
-  maxPossibleSpeed: 35.933
-  speedLimit: 29.7676
+  acceleration: 7.51
+  maxPossibleSpeed: 72.933
+  speedLimit: 10
   acceptableStoppingDistance: 4.8498907
   turnSpeed: 79.26861
   speedWhileTurning: 0
-  friction: 2.5
+  friction: 3.34
   futureLookTime: 1.5155301
   frontPosition: {fileID: 5139628576814836618}
   backPosition: {fileID: 5139628576424638664}

@@ -26,15 +26,12 @@ public class Car : MonoBehaviour
     private Road currentRoad;
     private bool hasTurned;
 
-    public bool shouldStop;
+    public bool stopping;
+    private bool shouldStop;
     private bool grounded;
     private Vector3 velocity;
     private int turnDirection;
     Car carInFront;
-
-    [SerializeField] float crashSoundCooldown = 1f;
-    float timer;
-    bool canMakeCrashSound = true;
 
     public enum Area
     {
@@ -67,13 +64,14 @@ public class Car : MonoBehaviour
 
     void Update()
     {
-        timer += Time.deltaTime;
-
-        if (timer >= crashSoundCooldown)
+        if(RoadManager.instance.GetAreaFromPoint(transform.position) == Area.away)
         {
-            canMakeCrashSound = true;
+            shouldStop = false;
         }
-
+        else
+        {
+            shouldStop = stopping;
+        }
         grounded = Grounded();
         if (grounded)
         {
@@ -308,20 +306,4 @@ public class Car : MonoBehaviour
     {
         return velocity;
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-
-        if (collision.gameObject.CompareTag("Car") && canMakeCrashSound)
-        {
-
-            float velocityForce = (velocity - collision.relativeVelocity).magnitude;
-            
-            canMakeCrashSound = false;
-            SoundManager.Instance.PlayRandomCrashCastSound();
-            SoundManager.Instance.PlayRandomCrashSound(transform.position, Mathf.Lerp(0f,1f,velocityForce/100f));
-
-        }
-    }
-
 }

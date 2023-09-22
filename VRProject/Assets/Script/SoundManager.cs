@@ -11,8 +11,14 @@ public class SoundManager : MonoBehaviour
     GameObject newObj;
     AudioClip[] audioClips;
 
+    [SerializeField] HelicopterManager helicopterManager;
+
+    [SerializeField] public bool playIngameMusic = true;
+
     [SerializeField] AudioSource audioSource;
     [SerializeField] List<GameObject> loopingSoundObjs;
+
+    [SerializeField] AudioClip musicClip;
 
     [Header("Helicopter Sounds")]
     [SerializeField] List<AudioClip> crashCastSounds;
@@ -21,13 +27,15 @@ public class SoundManager : MonoBehaviour
     [SerializeField] List<AudioClip> helicopterCrashingSound;
 
     [Header("Vehicle Sounds")]
-    [SerializeField] List<AudioClip> engineSounds;
     [SerializeField] List<AudioClip> hornSounds;
     [SerializeField] List<AudioClip> screamSounds;
     [SerializeField] List<AudioClip> crashSounds;
     [SerializeField] List<AudioClip> tireSounds;
     [SerializeField] List<AudioClip> hitSounds;
     [SerializeField] List<AudioClip> alarmSounds;
+
+
+
 
     private void Awake() //Singleton instance 
     {
@@ -46,8 +54,15 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
+        helicopterManager = GameObject.Find("Helicopter").GetComponent<HelicopterManager>();
         audioSource = GetComponent<AudioSource>();
+
+        if (playIngameMusic)
+        {
+            PlayGlobalLoopingSound(musicClip, 1f);
+        }
     }
+
 
     public GameObject PlayGlobalLoopingSound(AudioClip clip, float volume)
     {
@@ -171,12 +186,6 @@ public class SoundManager : MonoBehaviour
         PlayPitchedAudioOnLocation(clip, location, volume, Random.Range(minPitch, maxPitch));
     }
 
-    public void PlayRandomEngineSoundLooping(Vector3 location, float volume = 1)
-    {
-        AudioClip clip = engineSounds[Random.Range(0, engineSounds.Count)];
-        PlayLoopingAudioOnLocation(clip, location, volume);
-    }
-
     public void PlayRandomCrashSound(Vector3 location, float volume = 1, float minPitch = 0.9f, float maxPitch = 1.1f)
     {
         AudioClip clip = crashSounds[Random.Range(0, crashSounds.Count)];
@@ -185,29 +194,39 @@ public class SoundManager : MonoBehaviour
 
     public void PlayRandomCrashCastSound(float volume = 1f)
     {
+        if (!helicopterManager.isCurrentlyPlayingAudio)
+        {
 
-        AudioClip clip = crashCastSounds[Random.Range(0, crashCastSounds.Count)];
-        PlayAudio(clip, volume);
-
+            AudioClip clip = crashCastSounds[Random.Range(0, crashCastSounds.Count)];
+            helicopterManager.PlayAudio(clip, volume);
+        }
     }
 
     public void PlayRandomAmbulanceCastSound(float volume = 1f)
     {
-        AudioClip clip = ambulanceCastSounds[Random.Range(0, ambulanceCastSounds.Count)];
-        PlayAudio(clip, volume);
+        if (!helicopterManager.isCurrentlyPlayingAudio)
+        {
+            AudioClip clip = ambulanceCastSounds[Random.Range(0, ambulanceCastSounds.Count)];
+            helicopterManager.PlayAudio(clip, volume);
+        }
     }
 
     public void PlayRandomHelicopterHitByControllerSound(float volume = 1f)
     {
-        AudioClip clip = helicopterHitSoftlySound[Random.Range(0, helicopterHitSoftlySound.Count)];
-        PlayAudio(clip, volume);
+        if (!helicopterManager.isCurrentlyPlayingAudio)
+        {
+            AudioClip clip = helicopterHitSoftlySound[Random.Range(0, helicopterHitSoftlySound.Count)];
+            helicopterManager.PlayAudio(clip, volume);
+        }
+
     }
 
     public void PlayRandomHelicopterGoingDownSound(float volume = 1f)
     {
+        helicopterManager.StopAllAudioCurrentyPlaying();
         AudioClip clip = helicopterCrashingSound[Random.Range(0, helicopterCrashingSound.Count)];
-        PlayAudio(clip, volume);
+        helicopterManager.PlayAudio(clip, volume);
     }
-    
+
 
 }

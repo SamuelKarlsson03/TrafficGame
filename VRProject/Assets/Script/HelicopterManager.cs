@@ -11,6 +11,8 @@ public class HelicopterManager : MonoBehaviour
     [SerializeField] bool hasIntroduced = false;
     [SerializeField] float timeUntilIntroduction = 3f;
 
+    [SerializeField] public bool isCurrentlyPlayingAudio;
+
     [Header("Helicopter Move Variables")]
     [SerializeField] bool hasCrashed = false;
     [SerializeField] float crashSpinAngle = 66f;
@@ -26,17 +28,28 @@ public class HelicopterManager : MonoBehaviour
     private void Update()
     {
 
+        if (audioSource.isPlaying)
+        {
+            isCurrentlyPlayingAudio = true;
+        }
+        else
+        {
+            isCurrentlyPlayingAudio = false;
+        }
+           
+
         if (hasCrashed)
         {
             CrashMovement();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            CrashHelicopter();
-        }
-
     }
+
+    public void StopAllAudioCurrentyPlaying()
+    {
+        audioSource.Stop();
+    }
+
     public void PlayAudio(AudioClip clip, float volume = 1)
     {
 

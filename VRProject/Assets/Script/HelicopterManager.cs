@@ -18,6 +18,10 @@ public class HelicopterManager : MonoBehaviour
     [SerializeField] float crashSpinAngle = 66f;
     [SerializeField] float fallForce;
 
+    float castCooldown = 3f;
+    float timer;
+    public bool canCast = true;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -27,6 +31,16 @@ public class HelicopterManager : MonoBehaviour
 
     private void Update()
     {
+        if (!audioSource.isPlaying)
+        {
+            timer += Time.deltaTime;
+        }
+
+        if (timer >= castCooldown)
+        {
+            timer = 0;
+            canCast = true;
+        }
 
         if (audioSource.isPlaying)
         {
@@ -36,7 +50,7 @@ public class HelicopterManager : MonoBehaviour
         {
             isCurrentlyPlayingAudio = false;
         }
-           
+
 
         if (hasCrashed)
         {
@@ -52,9 +66,9 @@ public class HelicopterManager : MonoBehaviour
 
     public void PlayAudio(AudioClip clip, float volume = 1)
     {
-
-        if (!audioSource.isPlaying && hasIntroduced)
+        if (!audioSource.isPlaying && hasIntroduced && canCast && !hasCrashed)
         {
+            canCast = false;
             audioSource.PlayOneShot(clip, volume);
 
         }
@@ -76,13 +90,12 @@ public class HelicopterManager : MonoBehaviour
         yield return null;
     }
 
-
     private void CrashHelicopter()
     {
         hasCrashed = true;
         StopAllCoroutines();
         animator.enabled = false;
-
+        SoundManager.Instance.PlayRandomHelicopterGoingDownSound(1f);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -94,7 +107,6 @@ public class HelicopterManager : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Car"))
         {
-            SoundManager.Instance.PlayRandomHelicopterGoingDownSound(1f);
             CrashHelicopter();
         }
     }

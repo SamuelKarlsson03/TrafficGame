@@ -3188,7 +3188,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667657119}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6823170c2475238478de5417dfc6e76b, type: 3}
   m_Name: 
@@ -3200,7 +3200,7 @@ MonoBehaviour:
   - {fileID: 1652467907}
   carPrefabs:
   - {fileID: 5445636055966434366, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54, type: 3}
-  timeBetweenSpawns: 0.7
+  timeBetweenSpawns: 1
   spawnAmount: {x: 1, y: 1}
   lifetime: 25.18
 --- !u!114 &1667657124
@@ -3325,6 +3325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d58c77432459144dbd3509c1210632c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  helicopterManager: {fileID: 0}
   playIngameMusic: 1
   audioSource: {fileID: 1667657125}
   loopingSoundObjs: []

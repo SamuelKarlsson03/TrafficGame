@@ -31,8 +31,8 @@ public class ScoreDisplayManager : MonoBehaviour
 
         if (ScoreManager.Instance.currentScore != lastScore)
         {
-            //displayText.text =
-           // lastScore = ScoreManager.Instance.currentScore;
+           
+            lastScore = ScoreManager.Instance.currentScore;
         }
     }
 

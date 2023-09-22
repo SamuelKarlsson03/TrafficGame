@@ -5,20 +5,8 @@ using UnityEngine;
 
 public class VFX_controller : MonoBehaviour
 {
-    [SerializeField] GameObject explosion, iceCreamExplosion;
+    [SerializeField] GameObject explosion;
     public Transform explosionSpawn;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -42,4 +30,5 @@ public class VFX_controller : MonoBehaviour
         Destroy(newIceCreamExplosion, 3f);
     }
     */
+    
 }

@@ -5246,3 +5246,72 @@ MonoBehaviour:
     m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   handAnimator: {fileID: 2075969500}
+--- !u!1001 &3236641739780008514
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5218344369695769853, guid: 0d222881e48812340b3af19dc46f0bf0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218344369695769853, guid: 0d222881e48812340b3af19dc46f0bf0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218344369695769853, guid: 0d222881e48812340b3af19dc46f0bf0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218344369695769853, guid: 0d222881e48812340b3af19dc46f0bf0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 16.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218344369695769853, guid: 0d222881e48812340b3af19dc46f0bf0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218344369695769853, guid: 0d222881e48812340b3af19dc46f0bf0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218344369695769853, guid: 0d222881e48812340b3af19dc46f0bf0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218344369695769853, guid: 0d222881e48812340b3af19dc46f0bf0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218344369695769853, guid: 0d222881e48812340b3af19dc46f0bf0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218344369695769853, guid: 0d222881e48812340b3af19dc46f0bf0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218344369695769853, guid: 0d222881e48812340b3af19dc46f0bf0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097694225239998032, guid: 0d222881e48812340b3af19dc46f0bf0,
+        type: 3}
+      propertyPath: m_Name
+      value: IceCreamTruck
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d222881e48812340b3af19dc46f0bf0, type: 3}

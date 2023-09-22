@@ -76,20 +76,55 @@ public class RoadManager : MonoBehaviour
             road = GetRoadFromPoint(point);
         }
         Vector3 right = new Vector3(road.roadDirection.z, road.roadDirection.y, -road.roadDirection.x);
-        if(right.x >= 0.95f)
+        if(Mathf.Abs(right.x) >= 0.95f)
         {
             return Mathf.Abs(point.x-((road.startCorner.x + road.endCorner.x) * 0.5f));
         }
-        if (right.z >= 0.95f)
+        if (Mathf.Abs(right.z) >= 0.95f)
         {
             return Mathf.Abs(point.z - ((road.startCorner.y + road.endCorner.y) * 0.5f));
         }
         return 5f;
     }
 
+    public Road GetLeftTurnRoad(Road currentRoad)
+    {
+        for(int i = 0; i < roads.Length; i++)
+        {
+            if(currentRoad == roads[i])
+            {
+                return roads[(i + 5) % 8];
+            }
+        }
+        return null;
+    }
+
+    public Road GetRightTurnRoad(Road currentRoad)
+    {
+        for (int i = 0; i < roads.Length; i++)
+        {
+            if (currentRoad == roads[i])
+            {
+                return roads[(i + 1) % 8];
+            }
+        }
+        return null;
+    }
+
+    public Road GetRoadInFront(Road currentRoad)
+    {
+        for (int i = 0; i < roads.Length; i++)
+        {
+            if (currentRoad == roads[i])
+            {
+                return roads[((i + 3) + Mathf.FloorToInt((i+3)/8)) % 8];
+            }
+        }
+        return null;
+    }
+
     private void OnDrawGizmos()
     {
-            Random.InitState(1);
         for(int i = 0; i < roads.Length; i++)
         {
             Gizmos.color = Random.ColorHSV(0f, 1f,0f,1f,0.75f,1f);

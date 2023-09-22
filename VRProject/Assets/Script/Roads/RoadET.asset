@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b426879b30b44c4c9ec527c756a66a9, type: 3}
   m_Name: RoadET
   m_EditorClassIdentifier: 
-  color: {r: 0.8962264, g: 0.09638655, b: 0.3047101, a: 1}
-  startCorner: {x: -200, y: 0}
-  endCorner: {x: -12, y: 6}
+  color: {r: 0.8396226, g: 0.6968943, b: 0.09029898, a: 1}
+  startCorner: {x: 12, y: 0}
+  endCorner: {x: 200, y: 6}
   intersection: {fileID: 11400000, guid: 09d3910030e66ee43977b27ccfaf09af, type: 2}
-  area: 1
+  area: 0
   roadDirection: {x: -1, y: 0, z: 0}

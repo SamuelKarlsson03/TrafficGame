@@ -37,6 +37,7 @@ public class CarSpawner : MonoBehaviour
             GameObject spawnedObject = Instantiate(carPrefabs[r.Next(0,carPrefabs.Length)]);
             int index = r.Next(0,10000000);
             Debug.Log(index);
+            spawnedObject.name = "Car " + index;
             Transform selectedSpawnPoint = spawnPoints[index % spawnPoints.Length];
             Debug.Log(selectedSpawnPoint.name);
             spawnedObject.transform.position = selectedSpawnPoint.position;

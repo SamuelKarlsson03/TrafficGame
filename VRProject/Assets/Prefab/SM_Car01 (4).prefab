@@ -203,7 +203,7 @@ MonoBehaviour:
   acceptableStoppingDistance: 4.8498907
   turnSpeed: 79.26861
   speedWhileTurning: 0
-  friction: 1.4279732
+  friction: 2.5
   futureLookTime: 1.5155301
   frontPosition: {fileID: 5139628576814836618}
   backPosition: {fileID: 5139628576424638664}

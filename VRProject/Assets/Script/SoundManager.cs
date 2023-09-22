@@ -59,7 +59,7 @@ public class SoundManager : MonoBehaviour
 
         if (playIngameMusic)
         {
-            PlayGlobalLoopingSound(musicClip, 1f);
+            PlayGlobalLoopingSound(musicClip, 0.1f);
         }
     }
 

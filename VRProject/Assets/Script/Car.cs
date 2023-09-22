@@ -32,6 +32,10 @@ public class Car : MonoBehaviour
     private int turnDirection;
     Car carInFront;
 
+    [SerializeField] float crashSoundCooldown = 1f;
+    float timer;
+    bool canMakeCrashSound = true;
+
     public enum Area
     {
         towards,
@@ -63,6 +67,13 @@ public class Car : MonoBehaviour
 
     void Update()
     {
+        timer += Time.deltaTime;
+
+        if (timer >= crashSoundCooldown)
+        {
+            canMakeCrashSound = true;
+        }
+
         grounded = Grounded();
         if (grounded)
         {
@@ -297,4 +308,20 @@ public class Car : MonoBehaviour
     {
         return velocity;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.CompareTag("Car") && canMakeCrashSound)
+        {
+
+            float velocityForce = (velocity - collision.relativeVelocity).magnitude;
+            
+            canMakeCrashSound = false;
+            SoundManager.Instance.PlayRandomCrashCastSound();
+            SoundManager.Instance.PlayRandomCrashSound(transform.position, Mathf.Lerp(0f,1f,velocityForce/100f));
+
+        }
+    }
+
 }

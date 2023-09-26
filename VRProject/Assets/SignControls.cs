@@ -2,6 +2,7 @@ using UnityEngine;
 using Drawing;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+using Unity.VisualScripting;
 
 public class SignControls : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class SignControls : MonoBehaviour
     {
         if (held)
         {
+            Draw.WireBox(transform.TransformPoint(Vector3.right * (maxReach / 2) * rotationDirection), transform.rotation, new Vector3(5f, boxCastSize.y, boxCastSize.z), Color.green);
+
             if (Physics.BoxCast(transform.position, boxCastSize / 2, direction, out RaycastHit hit, transform.rotation, maxReach))
             {
                 if (hit.collider.CompareTag("Car"))
@@ -35,10 +38,12 @@ public class SignControls : MonoBehaviour
                 }
             }
         }
-    }
+     }
 
-    public void PickUpSign(GameObject hand)
+    public void PickUpSign()
     {
+        GameObject hand = null;
+
         if (this.CompareTag(rHand.interactablesSelected[0].transform.gameObject.tag))
             hand = rHand.gameObject;
         else if (this.CompareTag(lHand.interactablesSelected[0].transform.gameObject.tag))

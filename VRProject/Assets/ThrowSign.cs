@@ -14,17 +14,17 @@ public class ThrowSign : MonoBehaviour
     void Start()
     {
         state = State.Idle;
-        rb = GetComponent<RigidBody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (State)
+        switch (state)
         {
             case State.Throw:
                 {
-                    rb.velocity = rb.veloctiry.normalized * signSpeed;
+                    rb.velocity = rb.velocity.normalized * signSpeed;
                     Debug.Log(rb.velocity);
                 }
 

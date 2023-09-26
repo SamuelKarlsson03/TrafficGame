@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5940902859868788787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515157865829120527}
+  m_Layer: 0
+  m_Name: ConeSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &515157865829120527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5940902859868788787}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.16, z: -1.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5218344369695769853}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8097694225239998032
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,6 +43,8 @@ GameObject:
   - component: {fileID: 6975401902367571435}
   - component: {fileID: 7956454111115355601}
   - component: {fileID: 4150536254875604520}
+  - component: {fileID: 308191952}
+  - component: {fileID: 308191957}
   m_Layer: 0
   m_Name: IceCreamTruck
   m_TagString: Vehicle
@@ -32,6 +65,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4238858434150161468}
+  - {fileID: 515157865829120527}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62,8 +96,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5750357, y: 3.1572, z: 4.7770166}
-  m_Center: {x: -0.024265945, y: 1.3775209, z: 0.17823362}
+  m_Size: {x: 1.5750357, y: 2.0051436, z: 4.7770166}
+  m_Center: {x: -0.024265945, y: 0.8014927, z: 0.17823362}
 --- !u!114 &4150536254875604520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,8 +112,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1005170033248389154, guid: 1dacb9804faf52b46bda1fd6f0777852,
     type: 3}
-  iceCreamExplosion: {fileID: 0}
   explosionSpawn: {fileID: 86889290025728994}
+--- !u!114 &308191952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8097694225239998032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac75e58efb79c243964e7cfcbf205d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iceCreamCone: {fileID: 4758705450790935221, guid: c637a20b8c5715543825c1474b26fd54,
+    type: 3}
+  coneSpawnPos: {fileID: 515157865829120527}
+--- !u!65 &308191957
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8097694225239998032}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.2996013, z: 1.9202619}
+  m_Center: {x: 0, y: 1.1498007, z: -0.123135805}
 --- !u!1001 &3236641740255077480
 PrefabInstance:
   m_ObjectHideFlags: 0

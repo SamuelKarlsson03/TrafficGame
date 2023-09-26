@@ -35,7 +35,7 @@ public class Car : MonoBehaviour
 
     [SerializeField] GameObject explosionPrefab;
     [SerializeField] float health;
-    private bool broken;
+    public bool broken;
     [SerializeField] float crashSoundCooldown = 1f;
     float timer;
     bool canMakeCrashSound = true;

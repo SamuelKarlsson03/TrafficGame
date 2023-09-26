@@ -35,8 +35,6 @@ public class SoundManager : MonoBehaviour
     [SerializeField] List<AudioClip> alarmSounds;
 
 
-
-
     private void Awake() //Singleton instance 
     {
         if (Instance == null)
@@ -145,7 +143,6 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayAudioOnLocation(AudioClip clip, Vector3 location, float volume = 1) //Plays audioclip at specified location
     {
-
         AudioSource.PlayClipAtPoint(clip, location, volume);
     }
 

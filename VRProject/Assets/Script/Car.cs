@@ -33,6 +33,9 @@ public class Car : MonoBehaviour
     private int turnDirection;
     Car carInFront;
 
+    [SerializeField] GameObject explosionPrefab;
+    [SerializeField] float health;
+    private bool broken;
     [SerializeField] float crashSoundCooldown = 1f;
     float timer;
     bool canMakeCrashSound = true;
@@ -73,6 +76,7 @@ public class Car : MonoBehaviour
         if (timer >= crashSoundCooldown)
         {
             canMakeCrashSound = true;
+            timer -= crashSoundCooldown;
         }
 
         if (RoadManager.instance.GetAreaFromPoint(transform.position) == Area.away)
@@ -82,6 +86,12 @@ public class Car : MonoBehaviour
         else
         {
             shouldStop = stopping;
+        }
+
+        if(broken)
+        {
+            shouldStop = true;
+            stopping = true;
         }
         grounded = Grounded();
         if (grounded)
@@ -110,6 +120,12 @@ public class Car : MonoBehaviour
         direction.y = 0;
         direction.Normalize();
         Vector3 carInFrontVelocity = Vector3.zero;
+
+        if(broken)
+        {
+            return;
+        }
+
         if (carInFront == null)
         {
             distanceIfNoVelocityChange = 999;
@@ -317,6 +333,7 @@ public class Car : MonoBehaviour
     {
         return velocity;
     }
+
     private void OnCollisionEnter(Collision collision)
     {
 
@@ -326,10 +343,22 @@ public class Car : MonoBehaviour
             float velocityForce = (velocity - collision.relativeVelocity).magnitude;
 
             canMakeCrashSound = false;
+            health -= velocityForce;
+            if(health < 0)
+            {
+                Explode((transform.position + collision.gameObject.transform.position) * 0.5f);
+            }
             SoundManager.Instance.PlayRandomCrashCastSound();
             SoundManager.Instance.PlayRandomCrashSound(transform.position, Mathf.Lerp(0f, 1f, velocityForce / 100f));
 
         }
+    }
+
+    private void Explode(Vector3 point)
+    {
+        Instantiate(explosionPrefab).transform.position = point + Random.insideUnitSphere.normalized + new Vector3(0,1f,0);
+        broken = true;
+        Destroy(this.gameObject, 5f);
     }
 
 }

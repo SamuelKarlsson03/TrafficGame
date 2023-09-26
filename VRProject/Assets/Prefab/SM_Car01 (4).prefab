@@ -207,4 +207,8 @@ MonoBehaviour:
   futureLookTime: 1.5155301
   frontPosition: {fileID: 5139628576814836618}
   backPosition: {fileID: 5139628576424638664}
-  shouldStop: 0
+  stopping: 0
+  explosionPrefab: {fileID: 1005170033248389154, guid: 1dacb9804faf52b46bda1fd6f0777852,
+    type: 3}
+  health: 20
+  crashSoundCooldown: 1

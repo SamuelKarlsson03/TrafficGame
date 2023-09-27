@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum State { Throw,Return,Idle }
+public enum State { Throw, Return, Idle }
 public class ThrowSign : MonoBehaviour
 {
     public float signSpeed;

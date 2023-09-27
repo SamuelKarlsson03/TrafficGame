@@ -31,8 +31,15 @@ public class ThrowSign : MonoBehaviour
                 break;
             case State.Return:
                 {
-                    Vector3 dir = playerHand.position - transform.position;
-                    rb.velocity = dir * signSpeed;
+                    if (Vector3.SqrMagnitude(playerHand.position - transform.position) < 16)
+                    {
+                        Vector3 dir = playerHand.position - transform.position;
+                        rb.velocity = dir * signSpeed;
+                    }
+                    else
+                    {
+                        state = State.Idle;
+                    }
                 }
 
                 break;

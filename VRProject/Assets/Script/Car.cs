@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class Car : MonoBehaviour
@@ -35,6 +36,9 @@ public class Car : MonoBehaviour
 
     [SerializeField] GameObject explosionPrefab;
     [SerializeField] float health;
+    [SerializeField] float pointsGivenOnExplosion;
+    [SerializeField] float pointsGivenPerHealthUnderZero;
+    [SerializeField] float explosionDelay;
     public bool broken;
     [SerializeField] float crashSoundCooldown = 1f;
     float timer;
@@ -344,9 +348,9 @@ public class Car : MonoBehaviour
 
             canMakeCrashSound = false;
             health -= velocityForce;
-            if(health < 0)
+            if(health < 0 && !broken)
             {
-                Explode((transform.position + collision.gameObject.transform.position) * 0.5f);
+                Break((transform.position + collision.gameObject.transform.position) * 0.5f);
             }
             SoundManager.Instance.PlayRandomCrashCastSound();
             SoundManager.Instance.PlayRandomCrashSound(transform.position, Mathf.Lerp(0f, 1f, velocityForce / 100f));
@@ -354,11 +358,27 @@ public class Car : MonoBehaviour
         }
     }
 
-    private void Explode(Vector3 point)
+    private void Break(Vector3 point)
     {
-        Instantiate(explosionPrefab).transform.position = point + Random.insideUnitSphere.normalized + new Vector3(0,1f,0);
+        ScoreManager.Instance.AddScore(pointsGivenOnExplosion + (-health * pointsGivenPerHealthUnderZero));
         broken = true;
         Destroy(this.gameObject, 5f);
+        StartCoroutine(ExplodeOvertime(point));
+    }
+
+    private void Explode(Vector3 point)
+    {
+        Instantiate(explosionPrefab).transform.position = point + Random.insideUnitSphere.normalized + new Vector3(0, 1f, 0);
+    }
+
+    IEnumerator ExplodeOvertime(Vector3 point)
+    {
+        Explode(point);
+        while (true)
+        {
+            yield return new WaitForSeconds(explosionDelay);
+            Explode(transform.position);
+        }
     }
 
 }

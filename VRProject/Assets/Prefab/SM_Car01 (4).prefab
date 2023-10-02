@@ -197,13 +197,13 @@ MonoBehaviour:
   desiredTimeDistanceToFront: 2.4002593
   breakStrength: 2.383
   breakForce: 188.95
-  acceleration: 7.51
+  acceleration: 11.265
   maxPossibleSpeed: 72.933
-  speedLimit: 10
+  speedLimit: 28
   acceptableStoppingDistance: 4.8498907
   turnSpeed: 79.26861
   speedWhileTurning: 0
-  friction: 3.34
+  friction: 3.4
   futureLookTime: 1.5155301
   frontPosition: {fileID: 5139628576814836618}
   backPosition: {fileID: 5139628576424638664}
@@ -211,4 +211,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 1005170033248389154, guid: 1dacb9804faf52b46bda1fd6f0777852,
     type: 3}
   health: 20
+  pointsGivenOnExplosion: 100
+  pointsGivenPerHealthUnderZero: 10
+  explosionDelay: 0.25
+  broken: 0
   crashSoundCooldown: 1

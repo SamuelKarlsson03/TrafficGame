@@ -16,7 +16,7 @@ public class SignControls : MonoBehaviour
     readonly float maxReach = 5f;
 
     bool held = false;
-
+    [SerializeField] bool stopSign;
     private void Start()
     {
         boxCastSize = GetComponent<BoxCollider>().size;
@@ -34,7 +34,7 @@ public class SignControls : MonoBehaviour
                 if (hit.collider.CompareTag("Car"))
                 {
                     Debug.Log("carhit");
-                    //Do Stuff
+                    hit.collider.GetComponent<Car>().stopping = stopSign;
                 }
             }
         }

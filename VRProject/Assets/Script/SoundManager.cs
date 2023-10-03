@@ -52,7 +52,6 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        helicopterManager = GameObject.Find("Helicopter").GetComponent<HelicopterManager>();
         audioSource = GetComponent<AudioSource>();
 
         if (playIngameMusic)

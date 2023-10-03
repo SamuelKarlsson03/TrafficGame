@@ -196,7 +196,7 @@ MonoBehaviour:
   inspectCarInfrontTimer: 0.2117828
   desiredTimeDistanceToFront: 2.4002593
   breakStrength: 2.383
-  breakForce: 188.95
+  breakForce: 10088.95
   acceleration: 11.265
   maxPossibleSpeed: 72.933
   speedLimit: 28
@@ -207,7 +207,7 @@ MonoBehaviour:
   futureLookTime: 1.5155301
   frontPosition: {fileID: 5139628576814836618}
   backPosition: {fileID: 5139628576424638664}
-  stopping: 0
+  stopping: 1
   explosionPrefab: {fileID: 1005170033248389154, guid: 1dacb9804faf52b46bda1fd6f0777852,
     type: 3}
   health: 20

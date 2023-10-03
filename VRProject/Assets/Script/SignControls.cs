@@ -10,41 +10,52 @@ public class SignControls : MonoBehaviour
     public XRDirectInteractor lHand;
 
     Vector3 direction;
-    int rotationDirection = 1;
+    float rotationDirection = 1;
 
     Vector3 boxCastSize;
-    readonly float maxReach = 5f;
+    [SerializeField] float maxReach = 100f;
 
     bool held = false;
     [SerializeField] bool stopSign;
     private void Start()
     {
-        boxCastSize = GetComponent<BoxCollider>().size;
-        direction = transform.TransformDirection(Vector3.right * rotationDirection);
+        boxCastSize = GetComponent<BoxCollider>().size * 50;
+        direction = transform.right * rotationDirection;
     }
 
     void FixedUpdate()
     {
+        direction = transform.right * rotationDirection;
+        Debug.Log("HELD = "+held);
         if (held)
         {
-            Draw.WireBox(transform.TransformPoint(Vector3.right * (maxReach / 2) * rotationDirection), transform.rotation, new Vector3(5f, boxCastSize.y, boxCastSize.z), Color.green);
+            //Draw.WireBox(transform.TransformPoint(Vector3.right * (maxReach / 2) * rotationDirection), transform.rotation, new Vector3(maxReach, boxCastSize.y, boxCastSize.z), Color.green);
 
-            if (Physics.BoxCast(transform.position, boxCastSize / 2, direction, out RaycastHit hit, transform.rotation, maxReach))
+            RaycastHit[] hits = Physics.BoxCastAll(transform.position, boxCastSize / 2, direction, Quaternion.identity, maxReach,LayerMask.GetMask("Car"));
+            Debug.Log("CARSINRANGE"+hits.Length);
+            for (int i = 0; i < hits.Length; i++)
             {
-                if (hit.collider.CompareTag("Car"))
+                if (hits[i].collider.CompareTag("Car"))
                 {
                     Debug.Log("carhit");
-                    hit.collider.GetComponent<Car>().stopping = stopSign;
+                    hits[i].collider.GetComponent<Car>().stopping = stopSign;
                 }
             }
         }
      }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, transform.position + (direction*maxReach));
+        //Gizmos.DrawCube(transform.position + direction * (maxReach / 2), boxCastSize + direction*maxReach);
+    }
+
     public void PickUpSign()
     {
         GameObject hand = null;
 
-        if (this.CompareTag(rHand.interactablesSelected[0].transform.gameObject.tag))
+        if (rHand.interactablesSelected.Count > 0 && this.CompareTag(rHand.interactablesSelected[0].transform.gameObject.tag))
             hand = rHand.gameObject;
         else if (this.CompareTag(lHand.interactablesSelected[0].transform.gameObject.tag))
             hand = lHand.gameObject;
@@ -59,9 +70,9 @@ public class SignControls : MonoBehaviour
         float dotProduct = Vector3.Dot(handForward, stopSignForward);
 
         // Determine the sign (1 or -1) based on the dot product.
-        rotationDirection = (dotProduct >= 0) ? 1 : -1;
+        rotationDirection = (dotProduct >= 0) ? 1f : -1f;
 
-        direction = transform.TransformDirection(Vector3.right * rotationDirection);
+        direction = transform.right * rotationDirection;
 
         held = true;
     }

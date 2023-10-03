@@ -34,12 +34,14 @@ public class CarSpawner : MonoBehaviour
         int amountToSpawn = r.Next(spawnAmount.x, spawnAmount.y+1);
         for(int i = 0; i < amountToSpawn; i++)
         {
-            GameObject spawnedObject = Instantiate(carPrefabs[r.Next(0,carPrefabs.Length)]);
             int index = r.Next(0,10000000);
-            Debug.Log(index);
-            spawnedObject.name = "Car " + index;
             Transform selectedSpawnPoint = spawnPoints[index % spawnPoints.Length];
-            Debug.Log(selectedSpawnPoint.name);
+            if(Physics.OverlapSphere(selectedSpawnPoint.position,5f,LayerMask.GetMask("Car")).Length != 0)
+            {
+                return;
+            }
+            GameObject spawnedObject = Instantiate(carPrefabs[r.Next(0,carPrefabs.Length)]);
+            spawnedObject.name = "Car " + index;
             spawnedObject.transform.position = selectedSpawnPoint.position;
             spawnedObject.transform.rotation = selectedSpawnPoint.rotation;
             Destroy(spawnedObject, lifetime);

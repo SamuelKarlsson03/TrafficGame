@@ -3,6 +3,7 @@ using Drawing;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using Unity.VisualScripting;
+using System.Collections;
 
 public class SignControls : MonoBehaviour
 {
@@ -14,9 +15,11 @@ public class SignControls : MonoBehaviour
 
     Vector3 boxCastSize;
     [SerializeField] float maxReach = 100f;
+    [SerializeField] float despawnTime = 3f;
 
     bool held = false;
     [SerializeField] bool stopSign;
+
     private void Start()
     {
         boxCastSize = GetComponent<BoxCollider>().size * 50;
@@ -75,10 +78,25 @@ public class SignControls : MonoBehaviour
         direction = transform.right * rotationDirection;
 
         held = true;
+        CancelInvoke(nameof(Despawn));
     }
 
     public void DropSign()
     {
+        if (rHand.interactablesSelected.Count > 0 && this.CompareTag(rHand.interactablesSelected[0].transform.gameObject.tag))
+            return;
+        else if (this.CompareTag(lHand.interactablesSelected[0].transform.gameObject.tag))
+            return;
+
         held = false;
+        Invoke(nameof(Despawn), despawnTime);
+    }
+
+    private void Despawn()
+    {
+        if(!held)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -2,34 +2,27 @@ using UnityEngine;
 
 public class SignHolder : MonoBehaviour
 {
-    private MeshRenderer meshRenderer;
-    private GameObject childSign;
+    [SerializeField] private GameObject signPrefab;
+    private GameObject currentSign;
 
     private void Start()
     {
-        //childSign = GetComponentInChildren<SignManager>().gameObject;
-        meshRenderer = GetComponent<MeshRenderer>();
-        meshRenderer.enabled = false;
+         SpawnSign();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void SpawnSign()
     {
-        Debug.Log(other.tag);
-        if(other.CompareTag("Sign"))
-        {
-            childSign.SetActive(false);
-            this.GetComponent<MeshFilter>().mesh = other.gameObject.GetComponent<MeshFilter>().mesh;
-
-            meshRenderer.enabled = true;
-        }
+        currentSign = Instantiate<GameObject>(signPrefab, transform.position, transform.rotation, transform);
     }
+
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Sign"))
+        if (other.gameObject == currentSign)
         {
-            childSign.SetActive(true);
-            meshRenderer.enabled = false;
+            currentSign.transform.parent = null;
+            currentSign = null;
+            SpawnSign();
         }
     }
 }

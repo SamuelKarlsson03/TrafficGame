@@ -44,7 +44,7 @@ public class RagdollController : MonoBehaviour
             SetRagdollEnabled(true);
 
             // Inherit the velocity from what hit the ragdoll parts
-            Vector3 collisionVelocity = collision.attachedRigidbody.velocity * 10;
+            Vector3 collisionVelocity = collision.attachedRigidbody.velocity * 1.5f;
             foreach (Rigidbody rb in rigidbodies)
             {
                 // Apply the collision velocity to each ragdoll part

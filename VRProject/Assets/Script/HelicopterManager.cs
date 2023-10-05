@@ -18,6 +18,10 @@ public class HelicopterManager : MonoBehaviour
         }
     }
 
+
+    [SerializeField] GameObject rotaryObject;
+    [SerializeField] float rotateSpeed = 500f;
+
     public AudioSource audioSource;
     Animator animator;
 
@@ -73,6 +77,13 @@ public class HelicopterManager : MonoBehaviour
             CrashMovement();
         }
 
+        RotateBlades();
+
+    }
+
+    private void RotateBlades()
+    {
+        rotaryObject.transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
     }
 
     public void StopAllAudioCurrentyPlaying()

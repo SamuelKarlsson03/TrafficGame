@@ -54,6 +54,11 @@ public class Nuke : MonoBehaviour
             }
         }
 
+        if (blast.transform.localScale.x > 1.55)
+        {
+            SceneManager.LoadScene("Heaven");
+        }
+
     }
 
     private IEnumerator ExplodeNuke()
@@ -94,13 +99,13 @@ public class Nuke : MonoBehaviour
         increasePower = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            SceneManager.LoadScene("Intro");
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        SceneManager.LoadScene("Heaven");
+    //    }
+    //}
 
 
 }

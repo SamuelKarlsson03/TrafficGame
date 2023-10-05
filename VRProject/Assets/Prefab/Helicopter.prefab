@@ -133,13 +133,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nukeAfterSound: {fileID: 8300000, guid: d557614521dab16459bb797caf1a6104, type: 3}
   nukeExplosion: {fileID: 8300000, guid: cd9df87a093c8044ea4c099b2c2f6ceb, type: 3}
+  barackObamaAnnounce: {fileID: 8300000, guid: 9ba1ec1b8e791ca43b34fd07e1a38b4b, type: 3}
   blast: {fileID: 2351283685154637258}
   nukeVisualObject: {fileID: 7289656406443103483}
   hasDropped: 0
   dropSpeed: 15
   explosionPower: 5
-  increasePower: 0
   hasExploded: 0
+  timeUntilNuke: 10
 --- !u!135 &25064931
 SphereCollider:
   m_ObjectHideFlags: 0

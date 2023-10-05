@@ -50,8 +50,8 @@ public class ScoreDisplayManager : MonoBehaviour
 
     private void GetPos()
     {
-        endPos = transform.localPosition + new Vector3(-400, 0, 0);
-        startPos = transform.localPosition + new Vector3(400, 0, 0);
+        endPos = new Vector3(-400, 0, 0);
+        startPos = new Vector3(400, 0, 0);
     }
 
     private void UpdateScoreText(float score)

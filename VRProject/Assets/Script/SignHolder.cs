@@ -42,17 +42,6 @@ public class SignHolder : MonoBehaviour
             Invoke(nameof(SpawnSign), spawnDelay);
         }
     }
-
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == currentSign)
-        {
-            currentSign.transform.parent = null;
-            currentSign = null;
-            Invoke(nameof(SpawnSign), spawnDelay);
-        }
-    }
 }
 
 //Despawn timer quicker (done)

@@ -81,7 +81,7 @@ public class Button : MonoBehaviour
 
         if (isMoveonButton)
         {
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("NewGameScene");
         }
     }
 

@@ -45,7 +45,7 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+       // DontDestroyOnLoad(gameObject);
 
         loopingSoundObjs = new List<GameObject>();
 

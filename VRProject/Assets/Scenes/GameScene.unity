@@ -672,16 +672,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4457526027826397852, guid: a03c169a077d19147b3c8078a5bc90e0,
-        type: 3}
-      propertyPath: timeUntilNuke
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457526027826397852, guid: a03c169a077d19147b3c8078a5bc90e0,
-        type: 3}
-      propertyPath: barackObamaAnnounce
-      value: 
-      objectReference: {fileID: 8300000, guid: 9ba1ec1b8e791ca43b34fd07e1a38b4b, type: 3}
     - target: {fileID: 4878787750118635029, guid: a03c169a077d19147b3c8078a5bc90e0,
         type: 3}
       propertyPath: m_RootOrder
@@ -2817,6 +2807,8 @@ MonoBehaviour:
   currentScore: 0
   scoreAdded: 0
   highScore: 0
+  textObject: {fileID: 0}
+  worldCanvas: {fileID: 0}
 --- !u!1 &1733357795
 GameObject:
   m_ObjectHideFlags: 0

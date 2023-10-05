@@ -13,8 +13,9 @@ public class SignHolder : MonoBehaviour
 
     private void SpawnSign()
     {
-        currentSign = Instantiate<GameObject>(signPrefab, transform.position, transform.rotation, transform);
+        currentSign = Instantiate<GameObject>(signPrefab, transform.position, transform.rotation);
         currentSign.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        currentSign.transform.parent = transform;
     }
 
     private void FixedUpdate()

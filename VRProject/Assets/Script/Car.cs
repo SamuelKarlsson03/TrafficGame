@@ -41,6 +41,7 @@ public class Car : MonoBehaviour
     [SerializeField] float pointsGivenOnExplosion;
     [SerializeField] float pointsGivenPerHealthUnderZero;
     [SerializeField] float explosionDelay;
+    [SerializeField] GameObject smokePrefab;
     public bool broken;
     [SerializeField] float crashSoundCooldown = 1f;
     float timer;
@@ -397,7 +398,7 @@ public class Car : MonoBehaviour
 
     private void Break(Vector3 point)
     {
-        ScoreManager.Instance.AddScore(pointsGivenOnExplosion + (-health * pointsGivenPerHealthUnderZero));
+        ScoreManager.Instance.AddScore(pointsGivenOnExplosion + (-health * pointsGivenPerHealthUnderZero), point);
         broken = true;
         Destroy(this.gameObject, 5f);
         StartCoroutine(ExplodeOvertime(point));
@@ -415,12 +416,11 @@ public class Car : MonoBehaviour
     }
     IEnumerator ExplodeOvertime(Vector3 point)
     {
-        Explode(point);
-        while (true)
-        {
-            yield return new WaitForSeconds(explosionDelay);
-            Explode(transform.position);
-        }
+        GameObject smoke = Instantiate(smokePrefab);
+        smoke.transform.position = transform.position + Vector3.up;
+        Destroy(smoke, explosionDelay*2f);
+        yield return new WaitForSeconds(explosionDelay);
+        Explode(transform.position);
     }
 
 }

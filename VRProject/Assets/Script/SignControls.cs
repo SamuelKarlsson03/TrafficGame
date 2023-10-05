@@ -24,28 +24,25 @@ public class SignControls : MonoBehaviour
     {
         boxCastSize = GetComponent<BoxCollider>().size * 50;
         direction = transform.right * rotationDirection;
+        lHand = GameObject.Find("Left Controller").GetComponent<XRDirectInteractor>();
+        rHand = GameObject.Find("Right Controller").GetComponent<XRDirectInteractor>();
+        GetComponent<XRGrabInteractable>().interactionManager = GameObject.Find("GameManager").GetComponent<XRInteractionManager>();
     }
 
     void FixedUpdate()
     {
         direction = transform.right * rotationDirection;
-        Debug.Log("HELD = "+held);
         if (held)
         {
             //Draw.WireBox(transform.TransformPoint(Vector3.right * (maxReach / 2) * rotationDirection), transform.rotation, new Vector3(maxReach, boxCastSize.y, boxCastSize.z), Color.green);
 
-            RaycastHit[] hits = Physics.BoxCastAll(transform.position, boxCastSize / 2, direction, Quaternion.identity, maxReach,LayerMask.GetMask("Car"));
-            Debug.Log("CARSINRANGE"+hits.Length);
+            RaycastHit[] hits = Physics.RaycastAll(transform.position, direction, maxReach, LayerMask.GetMask("RoadCollider"));
             for (int i = 0; i < hits.Length; i++)
             {
-                if (hits[i].collider.CompareTag("Car"))
-                {
-                    Debug.Log("carhit");
-                    hits[i].collider.GetComponent<Car>().stopping = stopSign;
-                }
+                hits[i].collider.GetComponent<RoadCollider>().ChangeState(stopSign);
             }
         }
-     }
+    }
 
     private void OnDrawGizmos()
     {

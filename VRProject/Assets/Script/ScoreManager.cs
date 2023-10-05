@@ -18,6 +18,8 @@ public class ScoreManager : MonoBehaviour
     public float currentScore;
     public float scoreAdded;
     public float highScore;
+    [SerializeField] GameObject textObject;
+    [SerializeField] Transform worldCanvas;
 
     public delegate void UpdateScoreDelegate(float score);
     public event UpdateScoreDelegate updateScoreEvent;
@@ -59,9 +61,12 @@ public class ScoreManager : MonoBehaviour
         return scoreToAdd;
     }
 
-    public void AddScore(float amount)
+    public void AddScore(float amount, Vector3 point)
     {
         UpdateScore(amount);
+        GameObject text = Instantiate(textObject, worldCanvas);
+        text.GetComponent<TMPro.TextMeshProUGUI>().text = Mathf.Floor(amount) + "";
+        text.transform.position = point;
     }
 
    private void UpdateScore(float scoreAdded)

@@ -17,7 +17,7 @@ public class SignControls : MonoBehaviour
     [SerializeField] float maxReach = 100f;
     [SerializeField] float despawnTime = 3f;
 
-    bool held = false;
+    public bool held = false;
     [SerializeField] bool stopSign;
 
     private void Start()

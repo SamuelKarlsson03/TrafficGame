@@ -35,7 +35,7 @@ public class SignHolder : MonoBehaviour
             }
          }
 
-        if(Vector3.Distance(transform.position, currentSign.transform.position) > 2f)
+        if(Vector3.Distance(transform.position, currentSign.transform.position) > 1f)
         {
             currentSign.transform.parent = null;
             currentSign = null;

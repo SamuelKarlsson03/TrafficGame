@@ -2278,7 +2278,7 @@ PrefabInstance:
     - target: {fileID: 4878787750118635029, guid: a03c169a077d19147b3c8078a5bc90e0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.7
+      value: -42.1
       objectReference: {fileID: 0}
     - target: {fileID: 4878787750118635029, guid: a03c169a077d19147b3c8078a5bc90e0,
         type: 3}
@@ -2288,7 +2288,7 @@ PrefabInstance:
     - target: {fileID: 4878787750118635029, guid: a03c169a077d19147b3c8078a5bc90e0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.6237
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4878787750118635029, guid: a03c169a077d19147b3c8078a5bc90e0,
         type: 3}
@@ -9750,7 +9750,7 @@ MonoBehaviour:
   - {fileID: 5445636055966434366, guid: 1dd5cb73a406d2e4dbf4f6e36e9bbe54, type: 3}
   timeBetweenSpawns: 1
   spawnAmount: {x: 1, y: 1}
-  lifetime: 25.18
+  lifetime: 60
 --- !u!114 &1566649228
 MonoBehaviour:
   m_ObjectHideFlags: 0

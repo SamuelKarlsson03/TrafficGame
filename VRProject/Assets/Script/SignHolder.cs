@@ -34,6 +34,13 @@ public class SignHolder : MonoBehaviour
                 currentSign.transform.rotation = transform.rotation;
             }
          }
+
+        if(Vector3.Distance(transform.position, currentSign.transform.position) > 2f)
+        {
+            currentSign.transform.parent = null;
+            currentSign = null;
+            Invoke(nameof(SpawnSign), spawnDelay);
+        }
     }
 
 

@@ -73,7 +73,7 @@ public class ScoreManager : MonoBehaviour
    private void UpdateScore(float scoreAdded)
     {
         currentScore += scoreAdded;
-
+        PlayerPrefs.SetFloat("CurrentScore", currentScore);
         if (updateScoreEvent != null)
         {
             updateScoreEvent.Invoke(currentScore);

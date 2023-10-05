@@ -18,12 +18,18 @@ public class ScoreDisplayManager : MonoBehaviour
 
     private float lastScore;
 
+    [SerializeField] bool isInHeaven;
+
 
     void Start()
     {
         ScoreManager.Instance.updateScoreEvent += UpdateScoreText;
         GetPos();
         StartCoroutine(ScrollText());
+        if(isInHeaven)
+        {
+            displayText.text = "SCORE: " + PlayerPrefs.GetFloat("CurrentScore").ToString("0000000000");
+        }
     }
 
     private void Update()

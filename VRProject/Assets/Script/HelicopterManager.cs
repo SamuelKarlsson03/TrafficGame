@@ -4,7 +4,21 @@ using UnityEngine;
 
 public class HelicopterManager : MonoBehaviour
 {
-    AudioSource audioSource;
+    public static HelicopterManager Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public AudioSource audioSource;
     Animator animator;
 
     [SerializeField] AudioClip introductionSound;
@@ -31,6 +45,8 @@ public class HelicopterManager : MonoBehaviour
 
     private void Update()
     {
+        
+
         if (!audioSource.isPlaying)
         {
             timer += Time.deltaTime;

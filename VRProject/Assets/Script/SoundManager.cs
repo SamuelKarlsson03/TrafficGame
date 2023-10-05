@@ -15,7 +15,7 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] public bool playIngameMusic = true;
 
-    [SerializeField] AudioSource audioSource;
+    [SerializeField] public AudioSource audioSource;
     [SerializeField] List<GameObject> loopingSoundObjs;
 
     [SerializeField] AudioClip musicClip;
@@ -45,6 +45,7 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        DontDestroyOnLoad(gameObject);
 
         loopingSoundObjs = new List<GameObject>();
 
@@ -63,8 +64,8 @@ public class SoundManager : MonoBehaviour
 
     public GameObject PlayGlobalLoopingSound(AudioClip clip, float volume)
     {
-        loopingSoundObjs.Add(CreateLoopAudioObject(clip, volume, transform.position, true));
-        return loopingSoundObjs[loopingSoundObjs.Count - 1];
+            loopingSoundObjs.Add(CreateLoopAudioObject(clip, volume, transform.position, true));
+            return loopingSoundObjs[loopingSoundObjs.Count - 1];
     }
 
     public GameObject PlayGlobalLoopingSound(AudioClip clip, float volume, float duration)
@@ -106,6 +107,11 @@ public class SoundManager : MonoBehaviour
             }
         }
 
+    }
+
+    public void RemoveSong()
+    {
+        RemoveLoopingSound(musicClip);
     }
 
     private GameObject CreateLoopAudioObject(AudioClip clip, float volume, Vector3 position, bool isGlobal)

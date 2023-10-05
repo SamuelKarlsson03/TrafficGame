@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RoadNT
   m_EditorClassIdentifier: 
   color: {r: 0.8039216, g: 0.14117648, b: 0.627451, a: 1}
-  startCorner: {x: -6, y: 12}
+  startCorner: {x: -6, y: 8}
   endCorner: {x: 0, y: 200}
   intersection: {fileID: 11400000, guid: 09d3910030e66ee43977b27ccfaf09af, type: 2}
   area: 0

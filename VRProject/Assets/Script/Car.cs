@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Car : MonoBehaviour
@@ -25,6 +26,7 @@ public class Car : MonoBehaviour
     [SerializeField] Transform frontPosition;
     [SerializeField] Transform backPosition;
     private Road currentRoad;
+    private int currentRoadIndex;
     private bool hasTurned;
 
     public bool stopping;
@@ -59,6 +61,8 @@ public class Car : MonoBehaviour
         shouldStop = Random.Range(0, 2) == 0;
         shouldStop = false;
         currentRoad = RoadManager.instance.GetRoadFromPoint(transform.position);
+        currentRoadIndex = RoadManager.instance.AddCarToRoad(this, currentRoad);
+        stopping = RoadManager.instance.GetStopFromRoad(currentRoadIndex);
         rb = GetComponent<Rigidbody>();
     }
 
@@ -76,7 +80,6 @@ public class Car : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
         if (timer >= crashSoundCooldown)
         {
             canMakeCrashSound = true;
@@ -130,6 +133,7 @@ public class Car : MonoBehaviour
             return;
         }
 
+
         if (carInFront == null)
         {
             distanceIfNoVelocityChange = 999;
@@ -149,6 +153,7 @@ public class Car : MonoBehaviour
         {
             if (RoadManager.instance.GetAreaFromPoint(transform.position) == Area.intersection)
             {
+                Road lastRoad = currentRoad;
                 switch (Random.Range(0, 3))
                 {
                     case 0:
@@ -164,6 +169,16 @@ public class Car : MonoBehaviour
                         Debug.Log(gameObject.name + ": going forward");
                         break;
                 }
+                if(currentRoad != lastRoad)
+                {
+                    if(lastRoad != null)
+                    {
+                        RoadManager.instance.RemoveCarFromRoad(this, currentRoadIndex);
+                    }
+                    currentRoadIndex = RoadManager.instance.AddCarToRoad(this, currentRoad);
+                    stopping = RoadManager.instance.GetStopFromRoad(currentRoadIndex);
+                }
+
                 //Debug.Log(gameObject.name + " is turning from " + currentRoad.name);
                 //currentRoad = RoadManager.instance.GetLeftTurnRoad(currentRoad);
                 //Debug.Log(gameObject.name + " is turning to" + currentRoad.name);
@@ -225,6 +240,28 @@ public class Car : MonoBehaviour
                 }
             }
         }
+
+        if(!shouldStop)
+        {
+            if (!hasTurned)
+            {
+                float dist = RoadManager.instance.DistanceToIntersection(transform.position);
+                if (dist < 5 && velocity.magnitude > 3.5f)
+                {
+                    SlowDown();
+                }
+                else
+                {
+                    SpeedUp();
+                }
+            }
+            else
+            {
+                SpeedUp();
+            }
+            return;
+        }
+
 
         if (shouldStop)
         {
@@ -371,6 +408,11 @@ public class Car : MonoBehaviour
         Instantiate(explosionPrefab).transform.position = point + Random.insideUnitSphere.normalized + new Vector3(0, 1f, 0);
     }
 
+    private void OnDestroy()
+    {
+        RoadManager.instance.RemoveCarFromRoad(this,currentRoadIndex);
+        Debug.Log(gameObject.name + " removing on destroy");
+    }
     IEnumerator ExplodeOvertime(Vector3 point)
     {
         Explode(point);

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0.49668992, g: 0.8773585, b: 0.450267, a: 1}
   startCorner: {x: 0, y: -200}
-  endCorner: {x: 6, y: -12}
+  endCorner: {x: 6, y: -8}
   intersection: {fileID: 11400000, guid: 09d3910030e66ee43977b27ccfaf09af, type: 2}
   area: 0
   roadDirection: {x: 0, y: 0, z: 1}

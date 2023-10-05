@@ -2295,6 +2295,11 @@ PrefabInstance:
       propertyPath: dropSpeed
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 4457526027826397852, guid: a03c169a077d19147b3c8078a5bc90e0,
+        type: 3}
+      propertyPath: timeUntilNuke
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 4878787750118635029, guid: a03c169a077d19147b3c8078a5bc90e0,
         type: 3}
       propertyPath: m_RootOrder

@@ -67,6 +67,7 @@ public class ScoreManager : MonoBehaviour
         GameObject text = Instantiate(textObject, worldCanvas);
         text.GetComponent<TMPro.TextMeshProUGUI>().text = Mathf.Floor(amount) + "";
         text.transform.position = point;
+        Destroy(text,5f);
     }
 
    private void UpdateScore(float scoreAdded)

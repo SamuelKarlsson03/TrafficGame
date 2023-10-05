@@ -2263,22 +2263,22 @@ PrefabInstance:
     - target: {fileID: 4878787750118635029, guid: a03c169a077d19147b3c8078a5bc90e0,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4878787750118635029, guid: a03c169a077d19147b3c8078a5bc90e0,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4878787750118635029, guid: a03c169a077d19147b3c8078a5bc90e0,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 6.0513
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4878787750118635029, guid: a03c169a077d19147b3c8078a5bc90e0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.75385
+      value: -32.7
       objectReference: {fileID: 0}
     - target: {fileID: 4878787750118635029, guid: a03c169a077d19147b3c8078a5bc90e0,
         type: 3}
@@ -2345,6 +2345,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Helicopter
       objectReference: {fileID: 0}
+    - target: {fileID: 7926797575139390127, guid: a03c169a077d19147b3c8078a5bc90e0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f831bcdb023e2e74d922d2a4e019f658, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a03c169a077d19147b3c8078a5bc90e0, type: 3}
 --- !u!1 &375578449
@@ -4197,6 +4202,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 02hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c680734d6a929924182b129d7c9664e7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c680734d6a929924182b129d7c9664e7, type: 3}
@@ -10457,7 +10467,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671698572}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: cbbd8c61df381b74f965f27b9da863a9, type: 2}
   m_CullingMode: 0
@@ -10477,7 +10487,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671698572}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: db4d780928dbe084baf1d6b45100725a, type: 2}
   m_Animations: []

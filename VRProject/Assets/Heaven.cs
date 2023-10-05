@@ -12,9 +12,9 @@ public class Heaven : MonoBehaviour
 
     bool soundPlayed = false;
 
-
     void Start()
     {
+        Time.timeScale = 1f;
         audioSource = GetComponent<AudioSource>();
         StartCoroutine(PlayGodSound());
     }
@@ -36,7 +36,5 @@ public class Heaven : MonoBehaviour
             }
         }
     }
-
-
 
 }

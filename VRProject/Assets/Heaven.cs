@@ -34,7 +34,23 @@ public class Heaven : MonoBehaviour
             {
                 item.SetActive(true);
             }
+
+            StartCoroutine(EndTheGame());
+
         }
+    }
+
+    private IEnumerator EndTheGame()
+    {
+        yield return new WaitForSeconds(17.5f);
+
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        // Quit the application (works in a standalone build)
+        Application.Quit();
+#endif
     }
 
 }

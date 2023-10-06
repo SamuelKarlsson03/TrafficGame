@@ -18,6 +18,8 @@ public class ScoreManager : MonoBehaviour
     public float currentScore;
     public float scoreAdded;
     public float highScore;
+    private int currentCombo;
+    private float comboTimer;
     [SerializeField] GameObject textObject;
     [SerializeField] Transform worldCanvas;
 
@@ -50,6 +52,11 @@ public class ScoreManager : MonoBehaviour
         {
             UpdateScore(100);
         }
+        comboTimer -= Time.deltaTime;
+        if(comboTimer <= 0)
+        {
+            currentCombo = 0;
+        }
     }
 
 
@@ -63,10 +70,19 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(float amount, Vector3 point)
     {
-        UpdateScore(amount);
+        currentCombo++;
+        comboTimer = 2f;
+        UpdateScore(amount * currentCombo);
         GameObject text = Instantiate(textObject, worldCanvas);
-        text.GetComponent<TMPro.TextMeshProUGUI>().text = Mathf.Floor(amount) + "";
-        text.transform.position = point;
+        if(currentCombo > 1)
+        {
+            text.GetComponent<TMPro.TextMeshProUGUI>().text = Mathf.Floor(amount * currentCombo) + "(" + currentCombo + "x)";
+        }
+        else
+        {
+            text.GetComponent<TMPro.TextMeshProUGUI>().text = Mathf.Floor(amount * currentCombo) + "";
+        }
+        text.transform.position = point + Random.insideUnitSphere + Random.insideUnitSphere;
         Destroy(text,5f);
     }
 

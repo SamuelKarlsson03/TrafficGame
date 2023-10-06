@@ -26,6 +26,7 @@ public class RoadManager : MonoBehaviour
             for (int i = 0; i < roadsStopping.Length; i++)
             {
                 roadsStopping[i] = i % 2 != 0;
+                roadsStopping[i] = false;
             }
             for (int i = 0; i < carsInRoads.Length; i++)
             {

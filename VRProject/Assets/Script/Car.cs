@@ -400,7 +400,7 @@ public class Car : MonoBehaviour
     {
         ScoreManager.Instance.AddScore(pointsGivenOnExplosion + (-health * pointsGivenPerHealthUnderZero), point);
         broken = true;
-        Destroy(this.gameObject, 5f);
+        rb.useGravity = true;
         StartCoroutine(ExplodeOvertime(point));
     }
 
@@ -416,11 +416,12 @@ public class Car : MonoBehaviour
     }
     IEnumerator ExplodeOvertime(Vector3 point)
     {
-        GameObject smoke = Instantiate(smokePrefab);
+        GameObject smoke = Instantiate(smokePrefab, transform);
         smoke.transform.position = transform.position + Vector3.up;
-        Destroy(smoke, explosionDelay*2f);
+        Destroy(smoke, explosionDelay);
         yield return new WaitForSeconds(explosionDelay);
         Explode(transform.position);
+        Destroy(this.gameObject);
     }
 
 }
